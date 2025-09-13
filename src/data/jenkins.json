@@ -1,0 +1,14 @@
+[
+  {
+    "question": "What is Jenkins?",
+    "answer": "Jenkins is an open-source automation server used to build, test, and deploy software."
+  },
+  {
+    "question": "What are Jenkins pipelines?",
+    "answer": "Pipelines are a set of plugins that support implementing and integrating continuous delivery pipelines into Jenkins."
+  },
+  {
+    "question": "What is the difference between declarative and scripted pipelines?",
+    "answer": "Declarative pipelines provide a simpler, opinionated syntax, while scripted pipelines use Groovy for maximum flexibility."
+  }
+]

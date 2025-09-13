@@ -1,0 +1,12 @@
+[
+  { "name": "DevOps", "slug": "devops", "color": "bg-blue-500", "icon": "FaCogs" },
+  { "name": "AWS", "slug": "aws", "color": "bg-green-500", "icon": "FaAws" },
+  { "name": "Jenkins", "slug": "jenkins", "color": "bg-yellow-500", "icon": "SiJenkins" },
+  { "name": "Terraform", "slug": "terraform", "color": "bg-purple-500", "icon": "SiTerraform" },
+  { "name": "Docker", "slug": "docker", "color": "bg-blue-500", "icon": "FaDocker" },
+  { "name": "Ansible", "slug": "ansible", "color": "bg-green-500", "icon": "SiAnsible" },
+  { "name": "Kubernetes", "slug": "kubernetes", "color": "bg-purple-500", "icon": "SiKubernetes" },
+  { "name": "Linux", "slug": "linux", "color": "bg-blue-500", "icon": "FaLinux" },
+  { "name": "Bash", "slug": "bash", "color": "bg-green-500", "icon": "SiGnubash" },
+  { "name": "Scenario QA", "slug": "scenarioqa", "color": "bg-yellow-500", "icon": "FaQuestionCircle" }
+]

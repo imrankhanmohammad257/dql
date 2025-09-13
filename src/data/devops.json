@@ -1,0 +1,10 @@
+[
+  {
+    "question": "What is DevOps?",
+    "answer": "DevOps is a culture and practice that integrates development and operations to improve collaboration, automation, and delivery speed."
+  },
+  {
+    "question": "What are CI/CD pipelines?",
+    "answer": "CI/CD pipelines automate the process of code integration, testing, and deployment, ensuring faster and reliable releases."
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "question": "What is Docker?",
+    "answer": "Docker is a platform for developing, shipping, and running applications inside lightweight containers."
+  },
+  {
+    "question": "What is the difference between a container and an image?",
+    "answer": "An image is a read-only template, while a container is a running instance of an image."
+  }
+]

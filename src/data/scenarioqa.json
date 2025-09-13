@@ -1,0 +1,10 @@
+[
+  {
+    "question": "You deployed code, but the website is not loading. How do you troubleshoot?",
+    "answer": "Check service logs, verify server is running, check DNS, firewall, and application configuration."
+  },
+  {
+    "question": "Jenkins pipeline failed after adding a new stage. What would you check?",
+    "answer": "Review Jenkins logs, check pipeline syntax, validate credentials, and ensure dependencies are available."
+  }
+]

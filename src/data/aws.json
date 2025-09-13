@@ -1,0 +1,14 @@
+[
+  {
+    "question": "What is AWS?",
+    "answer": "AWS (Amazon Web Services) is a cloud computing platform providing IaaS, PaaS, and SaaS solutions."
+  },
+  {
+    "question": "What is an EC2 instance?",
+    "answer": "Amazon EC2 provides resizable compute capacity in the cloud, allowing you to run virtual servers."
+  },
+  {
+    "question": "What is S3?",
+    "answer": "Amazon S3 (Simple Storage Service) is an object storage service used for storing and retrieving data at scale."
+  }
+]

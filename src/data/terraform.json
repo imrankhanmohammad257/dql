@@ -1,0 +1,14 @@
+[
+  {
+    "question": "What is Terraform?",
+    "answer": "Terraform is an open-source Infrastructure as Code tool used to provision and manage cloud resources declaratively."
+  },
+  {
+    "question": "What is a Terraform provider?",
+    "answer": "A provider is a plugin that Terraform uses to interact with APIs of cloud platforms and services."
+  },
+  {
+    "question": "What is the difference between Terraform plan and apply?",
+    "answer": "Terraform plan shows the execution plan without making changes, while apply executes the plan and makes the changes."
+  }
+]

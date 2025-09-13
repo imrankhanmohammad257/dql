@@ -1,0 +1,10 @@
+[
+  {
+    "question": "What is the difference between Linux and Unix?",
+    "answer": "Linux is an open-source operating system inspired by Unix, while Unix is a proprietary system."
+  },
+  {
+    "question": "How to check running processes in Linux?",
+    "answer": "You can use commands like `ps aux`, `top`, or `htop` to check running processes."
+  }
+]

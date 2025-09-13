@@ -1,0 +1,10 @@
+[
+  {
+    "question": "What is Ansible?",
+    "answer": "Ansible is an open-source configuration management and automation tool that uses YAML playbooks."
+  },
+  {
+    "question": "What is an Ansible playbook?",
+    "answer": "A playbook is a YAML file that defines automation steps to be executed on target systems."
+  }
+]

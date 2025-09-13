@@ -1,0 +1,10 @@
+[
+  {
+    "question": "What is a Bash script?",
+    "answer": "A Bash script is a file containing a series of commands that can be executed in the Bash shell."
+  },
+  {
+    "question": "How to make a Bash script executable?",
+    "answer": "Use the command `chmod +x script.sh` to make a script executable."
+  }
+]
