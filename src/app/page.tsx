@@ -1,9 +1,10 @@
+import React from "react"; // Make sure this is imported
 import Link from "next/link";
 import topics from "./data/topics.json";
 import { FaCogs, FaAws, FaDocker, FaLinux, FaQuestionCircle } from "react-icons/fa";
 import { SiJenkins, SiTerraform, SiAnsible, SiKubernetes, SiGnubash } from "react-icons/si";
 
-const iconMap: Record<string, JSX.Element> = {
+const iconMap: Record<string, React.ReactNode> = {
   FaCogs: <FaCogs size={20} />,
   FaAws: <FaAws size={20} />,
   SiJenkins: <SiJenkins size={20} />,
@@ -13,7 +14,7 @@ const iconMap: Record<string, JSX.Element> = {
   SiKubernetes: <SiKubernetes size={20} />,
   FaLinux: <FaLinux size={20} />,
   SiGnubash: <SiGnubash size={20} />,
-  FaQuestionCircle: <FaQuestionCircle size={20} />
+  FaQuestionCircle: <FaQuestionCircle size={20} />,
 };
 
 export default function Home() {
