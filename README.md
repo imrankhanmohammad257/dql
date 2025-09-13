@@ -41,13 +41,31 @@ Check out the live website: [imrankhan.online](https://imrankhan.online)
 ## 📂 Project Structure
 
 ```
-├── components/       # Reusable React components
-├── data/             # JSON files containing Q&A content
-├── pages/            # Next.js pages
-├── public/           # Static assets (images, icons)
-├── styles/           # Tailwind CSS styles
-└── README.md
-```
+src/
+├── app/
+│   ├── layout.tsx        # Global layout
+│   ├── page.tsx          # Homepage
+│   └── topics/
+│       ├── devops/
+│       │   └── page.tsx
+│       ├── aws/
+│       │   └── page.tsx
+│       ├── jenkins/
+│       │   └── page.tsx
+│       └── terraform/
+│           └── page.tsx
+├── components/
+│   ├── Navbar.tsx
+│   ├── Footer.tsx
+│   └── QACard.tsx
+├── data/
+│   ├── devops.json
+│   ├── aws.json
+│   ├── jenkins.json
+│   └── terraform.json
+└── styles/
+    └── globals.css
+
 
 ---
 
