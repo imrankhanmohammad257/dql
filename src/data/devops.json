@@ -5,6 +5,6 @@
   },
   {
     "question": "What are CI/CD pipelines?",
-    "answer": "CI/CD pipelines automate the process of code integration, testing, and deployment, ensuring faster and reliable releases."
+    "answer": "CI/CD pipelines automate the process of code integration, testing, and deployment, ensuring faster and reliable releases..."
   }
 ]
