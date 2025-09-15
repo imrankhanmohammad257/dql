@@ -11,4 +11,10 @@
     "question": "What is S3?",
     "answer": "Amazon S3 (Simple Storage Service) is an object storage service used for storing and retrieving data at scale."
   }
+  ,
+
+  {
+    "question": "What is S3?",
+    "answer": "Amazon  (Simple Storage Service) is an object storage service used for storing and retrieving data at scale."
+  i}
 ]
