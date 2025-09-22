@@ -1,10 +1,52 @@
 [
   {
-    "question": "What is the difference between Linux and Unix?",
-    "answer": "Linux is an open-source operating system inspired by Unix, while Unix is a proprietary system."
+    "no": 1,
+    "question": "How to display the most recently modified file in Linux?",
+    "answer": "Use the command `ls -ltr` which lists files in long format sorted by modification time, with the latest file shown at the bottom."
   },
   {
-    "question": "How to check running processes in Linux?",
-    "answer": "You can use commands like `ps aux`, `top`, or `htop` to check running processes."
+    "no": 2,
+    "question": "How to create nested directories like d1/d2/d3 in Linux?",
+    "answer": "Run `mkdir -p d1/d2/d3` to create all the directories at once, even if parent directories do not exist."
+  },
+  {
+    "no": 3,
+    "question": "How to remove write permissions for group and others while keeping full permissions for the owner?",
+    "answer": "Use `chmod 755 filename`. This gives read, write, execute to the owner, and only read/execute to group and others."
+  },
+  {
+    "no": 4,
+    "question": "How to keep only read permissions and remove all others for a file F1?",
+    "answer": "Run `chmod 444 F1` which sets read-only permission for owner, group, and others."
+  },
+  {
+    "no": 5,
+    "question": "How to create a soft link to a directory in Linux?",
+    "answer": "Use `ln -s target_directory link_name`. Example: `ln -s /home/user/docs mydocs`."
+  },
+  {
+    "no": 6,
+    "question": "How to rename a file or directory D1 to D2?",
+    "answer": "Run `mv D1 D2` to rename or move a file/directory."
+  },
+  {
+    "no": 7,
+    "question": "How to remove a directory even if the owner does not have write permission?",
+    "answer": "Use `rm -rf directory_name` to forcefully remove the directory and its contents."
+  },
+  {
+    "no": 8,
+    "question": "How to display the first three lines of a file F1?",
+    "answer": "Run `head -3 F1` to show the top three lines."
+  },
+  {
+    "no": 9,
+    "question": "How to continuously monitor a file F1 in real-time?",
+    "answer": "Use `tail -f F1` to view live updates as the file grows."
+  },
+  {
+    "no": 10,
+    "question": "How to find all XML files inside /home/dir and its subdirectories?",
+    "answer": "Run `find /home/dir -name \"*.xml\"` to list all `.xml` files recursively."
   }
 ]
