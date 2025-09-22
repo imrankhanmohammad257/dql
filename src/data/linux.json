@@ -1,52 +1,378 @@
 [
   {
-    "no": 1,
-    "question": "How to display the most recently modified file in Linux?",
-    "answer": "Use the command `ls -ltr` which lists files in long format sorted by modification time, with the latest file shown at the bottom."
+    "question": "1. How to display the most recently modified file in Linux?",
+    "answer": "Use `ls -ltr` which lists files in long format sorted by modification time, with the latest file shown at the bottom."
   },
   {
-    "no": 2,
-    "question": "How to create nested directories like d1/d2/d3 in Linux?",
+    "question": "2. How to create nested directories like d1/d2/d3 in Linux?",
     "answer": "Run `mkdir -p d1/d2/d3` to create all the directories at once, even if parent directories do not exist."
   },
   {
-    "no": 3,
-    "question": "How to remove write permissions for group and others while keeping full permissions for the owner?",
+    "question": "3. How to remove write permissions for group and others while keeping full permissions for the owner?",
     "answer": "Use `chmod 755 filename`. This gives read, write, execute to the owner, and only read/execute to group and others."
   },
   {
-    "no": 4,
-    "question": "How to keep only read permissions and remove all others for a file F1?",
+    "question": "4. How to keep only read permissions and remove all others for a file F1?",
     "answer": "Run `chmod 444 F1` which sets read-only permission for owner, group, and others."
   },
   {
-    "no": 5,
-    "question": "How to create a soft link to a directory in Linux?",
+    "question": "5. How to create a soft link to a directory in Linux?",
     "answer": "Use `ln -s target_directory link_name`. Example: `ln -s /home/user/docs mydocs`."
   },
   {
-    "no": 6,
-    "question": "How to rename a file or directory D1 to D2?",
+    "question": "6. How to rename a file or directory D1 to D2?",
     "answer": "Run `mv D1 D2` to rename or move a file/directory."
   },
   {
-    "no": 7,
-    "question": "How to remove a directory even if the owner does not have write permission?",
+    "question": "7. How to remove a directory even if the owner does not have write permission?",
     "answer": "Use `rm -rf directory_name` to forcefully remove the directory and its contents."
   },
   {
-    "no": 8,
-    "question": "How to display the first three lines of a file F1?",
+    "question": "8. How to display the first three lines of a file F1?",
     "answer": "Run `head -3 F1` to show the top three lines."
   },
   {
-    "no": 9,
-    "question": "How to continuously monitor a file F1 in real-time?",
+    "question": "9. How to continuously monitor a file F1 in real-time?",
     "answer": "Use `tail -f F1` to view live updates as the file grows."
   },
   {
-    "no": 10,
-    "question": "How to find all XML files inside /home/dir and its subdirectories?",
+    "question": "10. How to find all XML files inside /home/dir and its subdirectories?",
     "answer": "Run `find /home/dir -name \"*.xml\"` to list all `.xml` files recursively."
+  },
+  {
+    "question": "11. How to check disk space usage in Linux?",
+    "answer": "Use `df -h` to display disk usage in human-readable format."
+  },
+  {
+    "question": "12. How to check memory usage in Linux?",
+    "answer": "Run `free -h` to see memory usage statistics."
+  },
+  {
+    "question": "13. How to display the current working directory?",
+    "answer": "Use `pwd` to print the absolute path of the current directory."
+  },
+  {
+    "question": "14. How to display hidden files in a directory?",
+    "answer": "Run `ls -a` to show all files including hidden ones (those starting with a dot)."
+  },
+  {
+    "question": "15. How to copy a file F1 to directory /tmp?",
+    "answer": "Use `cp F1 /tmp/` to copy the file."
+  },
+  {
+    "question": "16. How to move a file F1 to directory /tmp?",
+    "answer": "Run `mv F1 /tmp/` to move the file."
+  },
+  {
+    "question": "17. How to search for a keyword 'error' inside a file log.txt?",
+    "answer": "Use `grep 'error' log.txt` to search for matching lines."
+  },
+  {
+    "question": "18. How to search recursively for 'error' inside /var/log?",
+    "answer": "Run `grep -r 'error' /var/log` to search inside all files."
+  },
+  {
+    "question": "19. How to sort the contents of a file F1?",
+    "answer": "Use `sort F1` to display sorted lines alphabetically."
+  },
+  {
+    "question": "20. How to count the number of lines in file F1?",
+    "answer": "Run `wc -l F1` to get the line count."
+  },
+  {
+    "question": "21. How to check running processes in Linux?",
+    "answer": "Use `ps aux`, `top`, or `htop` to view running processes."
+  },
+  {
+    "question": "22. How to kill a process with PID 1234?",
+    "answer": "Run `kill -9 1234` to forcefully terminate the process."
+  },
+  {
+    "question": "23. How to check the system uptime?",
+    "answer": "Use `uptime` to display how long the system has been running."
+  },
+  {
+    "question": "24. How to display the current logged-in users?",
+    "answer": "Run `who` or `w` to see currently logged-in users."
+  },
+  {
+    "question": "25. How to check your system's IP address?",
+    "answer": "Use `ip addr show` or `ifconfig` (if available)."
+  },
+  {
+    "question": "26. How to test network connectivity to google.com?",
+    "answer": "Run `ping google.com` to send ICMP packets and check response."
+  },
+  {
+    "question": "27. How to download a file from the internet in Linux?",
+    "answer": "Use `wget URL` or `curl -O URL`."
+  },
+  {
+    "question": "28. How to extract a tar.gz file?",
+    "answer": "Run `tar -xvzf file.tar.gz` to extract."
+  },
+  {
+    "question": "29. How to compress a directory into a tar.gz file?",
+    "answer": "Use `tar -cvzf archive.tar.gz directory/`."
+  },
+  {
+    "question": "30. How to check the Linux kernel version?",
+    "answer": "Run `uname -r` to display the kernel version."
+  },
+  {
+    "question": "31. How to add a new user in Linux?",
+    "answer": "Use `sudo adduser username` or `sudo useradd username`."
+  },
+  {
+    "question": "32. How to switch to another user?",
+    "answer": "Run `su - username` to switch to that user account."
+  },
+  {
+    "question": "33. How to check which groups a user belongs to?",
+    "answer": "Use `groups username` to display group memberships."
+  },
+  {
+    "question": "34. How to change file ownership to user 'john'?",
+    "answer": "Run `chown john filename` to transfer ownership."
+  },
+  {
+    "question": "35. How to update and upgrade all packages in Ubuntu?",
+    "answer": "Run `sudo apt update && sudo apt upgrade -y`."
+  },
+  {
+    "question": "36. How to install a package 'nginx' in Ubuntu?",
+    "answer": "Use `sudo apt install nginx -y`."
+  },
+  {
+    "question": "37. How to remove a package 'nginx' in Ubuntu?",
+    "answer": "Run `sudo apt remove nginx -y`."
+  },
+  {
+    "question": "38. How to check which port a process is listening on?",
+    "answer": "Use `ss -tulnp` or `netstat -tulnp`."
+  },
+  {
+    "question": "39. How to schedule a job to run at 2 AM daily?",
+    "answer": "Edit crontab using `crontab -e` and add: `0 2 * * * command`."
+  },
+  {
+    "question": "40. How to check scheduled cron jobs for the current user?",
+    "answer": "Run `crontab -l` to list cron jobs."
+  },
+  {
+    "question": "41. How to display the last 50 lines of a log file?",
+    "answer": "Use `tail -50 logfile.log`."
+  },
+  {
+    "question": "42. How to search for a running process by name?",
+    "answer": "Run `ps aux | grep processname`."
+  },
+  {
+    "question": "43. How to check the CPU usage of processes in real-time?",
+    "answer": "Use `top` or `htop`."
+  },
+  {
+    "question": "44. How to check system logs in Ubuntu?",
+    "answer": "Run `journalctl` or check `/var/log/syslog`."
+  },
+  {
+    "question": "45. How to check the default shell of a user?",
+    "answer": "Use `echo $SHELL` or check `/etc/passwd`."
+  },
+  {
+    "question": "46. How to change the default shell for a user?",
+    "answer": "Run `chsh -s /bin/bash username`."
+  },
+  {
+    "question": "47. How to check currently open files by a process?",
+    "answer": "Use `lsof -p PID`."
+  },
+  {
+    "question": "48. How to display the top 10 largest files in /var?",
+    "answer": "Run `du -ah /var | sort -rh | head -10`."
+  },
+  {
+    "question": "49. How to display the top 10 largest directories in Linux?",
+    "answer": "Use `du -h --max-depth=1 | sort -hr | head -10`."
+  },
+  {
+    "question": "50. How to display environment variables?",
+    "answer": "Run `printenv` or `env`."
+  },
+  {
+    "question": "51. How to set an environment variable TEMP=123?",
+    "answer": "Run `export TEMP=123`."
+  },
+  {
+    "question": "52. How to make an environment variable permanent?",
+    "answer": "Add `export VAR=value` to `~/.bashrc` or `~/.bash_profile`."
+  },
+  {
+    "question": "53. How to check the hostname of a Linux system?",
+    "answer": "Use `hostname`."
+  },
+  {
+    "question": "54. How to change the hostname in Linux?",
+    "answer": "Run `hostnamectl set-hostname newname`."
+  },
+  {
+    "question": "55. How to check the Linux distribution and version?",
+    "answer": "Use `lsb_release -a` or check `/etc/os-release`."
+  },
+  {
+    "question": "56. How to list all services running in systemd?",
+    "answer": "Use `systemctl list-units --type=service`."
+  },
+  {
+    "question": "57. How to start and stop a service named nginx?",
+    "answer": "Run `systemctl start nginx` and `systemctl stop nginx`."
+  },
+  {
+    "question": "58. How to enable a service to start on boot?",
+    "answer": "Use `systemctl enable servicename`."
+  },
+  {
+    "question": "59. How to check the status of a service?",
+    "answer": "Run `systemctl status servicename`."
+  },
+  {
+    "question": "60. How to reboot the Linux system?",
+    "answer": "Use `reboot` or `shutdown -r now`."
+  },
+  {
+    "question": "61. How to shut down the Linux system immediately?",
+    "answer": "Run `shutdown -h now`."
+  },
+  {
+    "question": "62. How to schedule a shutdown after 10 minutes?",
+    "answer": "Use `shutdown -h +10`."
+  },
+  {
+    "question": "63. How to lock a user account in Linux?",
+    "answer": "Run `passwd -l username`."
+  },
+  {
+    "question": "64. How to unlock a user account?",
+    "answer": "Use `passwd -u username`."
+  },
+  {
+    "question": "65. How to add a user to a group?",
+    "answer": "Run `usermod -aG groupname username`."
+  },
+  {
+    "question": "66. How to delete a user in Linux?",
+    "answer": "Use `userdel -r username`."
+  },
+  {
+    "question": "67. How to display the last login of users?",
+    "answer": "Run `last` or `lastlog`."
+  },
+  {
+    "question": "68. How to block an IP using firewall in Linux?",
+    "answer": "Use `sudo iptables -A INPUT -s IP -j DROP`."
+  },
+  {
+    "question": "69. How to allow port 80 traffic in firewall?",
+    "answer": "Use `sudo ufw allow 80/tcp` or `iptables -A INPUT -p tcp --dport 80 -j ACCEPT`."
+  },
+  {
+    "question": "70. How to check listening ports in Linux?",
+    "answer": "Run `ss -tuln` or `netstat -tuln`."
+  },
+  {
+    "question": "71. How to test DNS resolution in Linux?",
+    "answer": "Use `dig domain.com` or `nslookup domain.com`."
+  },
+  {
+    "question": "72. How to check default gateway in Linux?",
+    "answer": "Run `ip route show`."
+  },
+  {
+    "question": "73. How to mount a partition in Linux?",
+    "answer": "Use `mount /dev/sdX /mnt/point`."
+  },
+  {
+    "question": "74. How to unmount a partition?",
+    "answer": "Run `umount /mnt/point`."
+  },
+  {
+    "question": "75. How to list mounted file systems?",
+    "answer": "Use `mount` or `df -h`."
+  },
+  {
+    "question": "76. How to check disk usage of a directory?",
+    "answer": "Run `du -sh directory/`."
+  },
+  {
+    "question": "77. How to check inode usage?",
+    "answer": "Use `df -i`."
+  },
+  {
+    "question": "78. How to create an empty file?",
+    "answer": "Run `touch filename`."
+  },
+  {
+    "question": "79. How to create a file with specific content?",
+    "answer": "Use `echo 'text' > file.txt`."
+  },
+  {
+    "question": "80. How to append text to a file?",
+    "answer": "Run `echo 'more text' >> file.txt`."
+  },
+  {
+    "question": "81. How to check word count of a file?",
+    "answer": "Use `wc file.txt`."
+  },
+  {
+    "question": "82. How to display unique lines in a file?",
+    "answer": "Run `sort file.txt | uniq`."
+  },
+  {
+    "question": "83. How to compare two files?",
+    "answer": "Use `diff file1 file2`."
+  },
+  {
+    "question": "84. How to merge contents of multiple files into one?",
+    "answer": "Run `cat file1 file2 > newfile`."
+  },
+  {
+    "question": "85. How to create a simple shell script?",
+    "answer": "Create a file with shebang `#!/bin/bash`, write commands, and make it executable with `chmod +x script.sh`."
+  },
+  {
+    "question": "86. How to run a shell script?",
+    "answer": "Use `./script.sh` or `bash script.sh`."
+  },
+  {
+    "question": "87. How to schedule a script to run every 5 minutes?",
+    "answer": "Add to crontab: `*/5 * * * * /path/script.sh`."
+  },
+  {
+    "question": "88. How to check running cron jobs of root?",
+    "answer": "Run `sudo crontab -l -u root`."
+  },
+  {
+    "question": "89. How to monitor system performance in real time?",
+    "answer": "Use `vmstat`, `iostat`, or `sar`."
+  },
+  {
+    "question": "90. How to check kernel logs?",
+    "answer": "Run `dmesg`."
+  },
+  {
+    "question": "91. How to create a new SSH key pair?",
+    "answer": "Run `ssh-keygen -t rsa -b 4096`."
+  },
+  {
+    "question": "92. How to copy SSH key to a remote server?",
+    "answer": "Use `ssh-copy-id user@host`."
+  },
+  {
+    "question": "93. How to connect to a remote server via SSH?",
+    "answer": "Run `ssh user@hostname`."
+  },
+  {
+    "question": "94. How to transfer files between servers via SCP?",
+    "answer": "Use `scp file user@host:/path/`."
   }
 ]
