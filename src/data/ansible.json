@@ -1,10 +1,122 @@
 [
   {
-    "question": "What is Ansible?",
-    "answer": "Ansible is an open-source configuration management and automation tool that uses YAML playbooks."
+    "question": "1. What is Ansible and why is it used?",
+    "answer": "Ansible is an open-source automation tool for configuration management, application deployment, provisioning, and orchestration. It is agentless and communicates with nodes over SSH. It simplifies repetitive tasks and ensures consistency across servers."
   },
   {
-    "question": "What is an Ansible playbook?",
-    "answer": "A playbook is a YAML file that defines automation steps to be executed on target systems."
+    "question": "2. Explain the architecture of Ansible.",
+    "answer": "Ansible has the following components:\n- Controller: Installed with Ansible, runs playbooks.\n- Managed Nodes: Target systems where tasks are executed.\n- Inventory: Hosts list.\n- Modules: Predefined task executors.\n- Playbooks: YAML-based automation instructions.\n- Roles: Organized reusable structures of playbooks, tasks, and handlers."
+  },
+  {
+    "question": "3. What is an Ansible inventory?",
+    "answer": "An inventory is a file containing a list of target machines that Ansible will manage. It can be static (defined in a file like /etc/ansible/hosts) or dynamic (fetched from cloud APIs such as AWS, GCP, or Azure)."
+  },
+  {
+    "question": "4. What is a playbook in Ansible?",
+    "answer": "A playbook is a YAML file that defines a series of tasks to run on managed nodes. Playbooks support variables, loops, conditionals, handlers, roles, and templates for automation."
+  },
+  {
+    "question": "5. Give an example of a simple playbook.",
+    "answer": "Example:\n---\n- name: Ping worker nodes\n  hosts: all\n  tasks:\n    - name: Ping all nodes\n      ping: {}"
+  },
+  {
+    "question": "6. What are Ansible modules?",
+    "answer": "Modules are small programs that Ansible sends to target machines for execution. Examples: yum (install packages), apt, service, command, shell, copy, file, git, archive, debug, etc."
+  },
+  {
+    "question": "7. What is an Ansible role?",
+    "answer": "A role is a way to structure playbooks into reusable components. It contains directories like tasks/, handlers/, files/, templates/, vars/, defaults/, and meta/."
+  },
+  {
+    "question": "8. What is the standard directory structure of an Ansible role?",
+    "answer": "Example structure:\nlamp/\n├── tasks/\n├── handlers/\n├── files/\n├── templates/\n├── vars/\n├── defaults/\n├── meta/\n└── README.md"
+  },
+  {
+    "question": "9. What are ad-hoc commands in Ansible?",
+    "answer": "Ad-hoc commands are one-line commands used for quick tasks without writing playbooks. Example: ansible all -m ping."
+  },
+  {
+    "question": "10. How do you check connectivity between worker nodes?",
+    "answer": "Run: ansible all -m ping or ansible -i inventory all -m ping."
+  },
+  {
+    "question": "11. How do you gather facts about a node?",
+    "answer": "Use the setup module: ansible all -m setup."
+  },
+  {
+    "question": "12. How do you ping a host with username and password?",
+    "answer": "Run: ansible all -m ping --user=ansadm --ask-pass."
+  },
+  {
+    "question": "13. How do you check system uptime?",
+    "answer": "Run: ansible all -a uptime."
+  },
+  {
+    "question": "14. How do you check memory usage?",
+    "answer": "Run: ansible all -a 'free -m'."
+  },
+  {
+    "question": "15. How do you run commands as root using Ansible?",
+    "answer": "Use become: ansible all -m shell -a 'cat /etc/passwd' -b -K."
+  },
+  {
+    "question": "16. How do you execute a command as a different user?",
+    "answer": "Run: ansible all -m file -a 'path=/tmp/test state=directory mode=0755' -b --become-user=ansadm."
+  },
+  {
+    "question": "17. How do you create a Linux group?",
+    "answer": "Run: ansible all -m group -a 'name=developers state=present' -b -K."
+  },
+  {
+    "question": "18. How do you create a file with specific permissions?",
+    "answer": "Run: ansible all -m file -a 'path=/home/user/testfile state=touch mode=0755'."
+  },
+  {
+    "question": "19. How do you change ownership of a file?",
+    "answer": "Run: ansible all -m file -a 'path=/home/user/testfile owner=weblogic group=weblogic' -b."
+  },
+  {
+    "question": "20. How do you install a package?",
+    "answer": "Run: ansible all -m yum -a 'name=httpd state=installed'."
+  },
+  {
+    "question": "21. How do you start and stop a service?",
+    "answer": "Start: ansible all -m service -a 'name=httpd state=started enabled=yes'\nStop: ansible all -m service -a 'name=httpd state=stopped enabled=no'."
+  },
+  {
+    "question": "22. What is ansible.cfg and what does it contain?",
+    "answer": "ansible.cfg is the main configuration file. It contains settings like inventory path, remote user, private key, timeout, roles path, log path, etc."
+  },
+  {
+    "question": "23. What is Ansible Vault?",
+    "answer": "Ansible Vault is used to encrypt sensitive data such as passwords and keys. Commands include: ansible-vault encrypt, decrypt, rekey, edit, and view."
+  },
+  {
+    "question": "24. How do you run only specific tasks in a playbook?",
+    "answer": "Use tags. Example:\n---\n- name: Install Nginx\n  hosts: web\n  tasks:\n    - name: Install Nginx\n      apt:\n        name: nginx\n        state: present\n      tags: install\nRun with: ansible-playbook site.yml --tags install"
+  },
+  {
+    "question": "25. Real-time: Your playbook fails due to a missing package. How do you troubleshoot?",
+    "answer": "Check the playbook logs, ensure correct package name, check repository availability, and validate if package manager (yum/apt) is working on the node."
+  },
+  {
+    "question": "26. Real-time: How do you ensure idempotency in Ansible?",
+    "answer": "Use Ansible modules instead of raw commands. For example, use service: instead of shell: systemctl start nginx. Modules check the state and avoid duplicate actions."
+  },
+  {
+    "question": "27. Real-time: How do you run Ansible against only one host?",
+    "answer": "Use the -l flag: ansible-playbook site.yml -l hostname."
+  },
+  {
+    "question": "28. Real-time: How do you test a playbook without making changes?",
+    "answer": "Run in check mode: ansible-playbook site.yml --check."
+  },
+  {
+    "question": "29. Real-time: How do you debug variables inside a playbook?",
+    "answer": "Use the debug module. Example:\n- debug:\n    msg: 'The value of var1 is {{ var1 }}'"
+  },
+  {
+    "question": "30. Real-time: You need to install multiple packages. How do you do it?",
+    "answer": "Example task:\n- name: Install multiple packages\n  yum:\n    name:\n      - httpd\n      - git\n      - wget\n    state: present"
   }
 ]
