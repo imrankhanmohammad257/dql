@@ -1,6 +1,6 @@
 [
   {
-    "question": "1. What is Ansible and why is it used?",
+    "question": "1. What is the Ansible and why is it used?",
     "answer": "Ansible is an open-source automation tool for configuration management, application deployment, provisioning, and orchestration. It is agentless and communicates with nodes over SSH. It simplifies repetitive tasks and ensures consistency across servers."
   },
   {
