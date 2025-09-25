@@ -1,134 +1,134 @@
 [
   {
-    "question": "You deployed code, but the website is not loading. How do you troubleshoot?",
+    "question": "1. You deployed code, but the website is not loading. How do you troubleshoot?",
     "answer": "Check service logs, verify server is running, check DNS, firewall, and application configuration."
   },
   {
-    "question": "Jenkins pipeline failed after adding a new stage. What would you check?",
+    "question": "2. Jenkins pipeline failed after adding a new stage. What would you check?",
     "answer": "Review Jenkins logs, check pipeline syntax, validate credentials, and ensure dependencies are available."
   },
   {
-    "question": "Restrict access to a specific object and a specific user in S3",
+    "question": "3. Restrict access to a specific object and a specific user in S3",
     "answer": "Use a bucket policy or object ACL plus an IAM policy (or cross-account role) for the user. Example bucket policy allows only one principal access to one object. Ensure BlockPublicAcls/BlockPublicPolicy are set. Object ACLs are rarely needed if bucket policy + IAM policy cover it."
   },
   {
-    "question": "App in Account A needs images from S3 in Account B",
+    "question": "4. App in Account A needs images from S3 in Account B",
     "answer": "Use cross-account bucket policy to allow Account A’s IAM role/EC2 profile, or AssumeRole in Account B (preferred). Optionally use CloudFront or signed URLs for caching/public distribution."
   },
   {
-    "question": "Give temporary 5-minute access to a single S3 object while keeping bucket private",
+    "question": "5. Give temporary 5-minute access to a single S3 object while keeping bucket private",
     "answer": "Use AWS CLI or SDK to generate a presigned URL with expires-in 300 seconds. Alternatively use temporary assume-role credentials, but presigned URL is simplest."
   },
   {
-    "question": "Static website in region A must fetch images stored in a bucket in region B",
+    "question": "6. Static website in region A must fetch images stored in a bucket in region B",
     "answer": "Enable CORS on the image bucket and add bucket policy, or use CloudFront for production. Direct S3 URLs work if CORS allows. Example CORS config allows origin https://www.example.com."
   },
   {
-    "question": "Lambda (in VPC, Account A) must connect to EC2 (Account B)",
+    "question": "7. Lambda (in VPC, Account A) must connect to EC2 (Account B)",
     "answer": "Use PrivateLink with NLB + VPC Endpoint Service (recommended). Or use VPC Peering with route and SG rules. Ensure DNS resolution and IAM for app-level auth."
   },
   {
-    "question": "Explain Kubernetes architecture",
+    "question": "8. Explain Kubernetes architecture",
     "answer": "Control plane: kube-apiserver, etcd, kube-scheduler, kube-controller-manager. Worker nodes: kubelet, kube-proxy, container runtime. Add-ons: DNS, ingress controller, CNI plugins, monitoring. Objects: Pods, ReplicaSets, Deployments, Services, ConfigMaps, Secrets, Namespaces."
   },
   {
-    "question": "Types of Services in Kubernetes",
+    "question": "9. Types of Services in Kubernetes",
     "answer": "ClusterIP (default, internal), NodePort (basic external), LoadBalancer (cloud LB), ExternalName (DNS alias), Headless service (direct pod DNS). Ingress is not a Service but provides HTTP routing."
   },
   {
-    "question": "Scrape data from running nodes using monitoring agent",
+    "question": "10. Scrape data from running nodes using monitoring agent",
     "answer": "Deploy node-exporter as a DaemonSet on all nodes. Also use kube-state-metrics and cAdvisor. Configure Prometheus or Prometheus Operator with ServiceMonitor. Use RBAC properly."
   },
   {
-    "question": "Schedule specific pods on specific nodes",
+    "question": "11. Schedule specific pods on specific nodes",
     "answer": "Use nodeSelector for simple match, nodeAffinity for advanced, taints & tolerations for restricting pods, or DaemonSet for one pod per node. Label nodes appropriately."
   },
   {
-    "question": "Use of Namespace in Kubernetes",
+    "question": "12. Use of Namespace in Kubernetes",
     "answer": "Provides logical isolation, scoping for resources, RBAC, ResourceQuota, and environment separation (dev, stage, prod)."
   },
   {
-    "question": "Communication between pods in different namespaces",
+    "question": "13. Communication between pods in different namespaces",
     "answer": "Pods can talk to services in other namespaces via DNS like my-service.my-namespace.svc.cluster.local. No network changes are required by default."
   },
   {
-    "question": "Stop communication between pods in two different namespaces",
+    "question": "14. Stop communication between pods in two different namespaces",
     "answer": "Use NetworkPolicy with default deny and allow specific traffic. CNIs like Calico support namespace isolation."
   },
   {
-    "question": "When to use ConfigMap and Secrets",
+    "question": "15. When to use ConfigMap and Secrets",
     "answer": "ConfigMap: non-sensitive data. Secret: sensitive data (passwords, tokens). Both can be injected as env vars or mounted as files."
   },
   {
-    "question": "Benefit of using Secrets over ConfigMap",
+    "question": "16. Benefit of using Secrets over ConfigMap",
     "answer": "Secrets can be encrypted at rest, managed via RBAC, and integrated with KMS or external secret managers. ConfigMaps are not encrypted."
   },
   {
-    "question": "Can we delete the image from which a container is running?",
+    "question": "17. Can we delete the image from which a container is running?",
     "answer": "Yes, deleting the image does not stop a running container because it uses its own copy. But the image won’t be available for new containers."
   },
   {
-    "question": "If you deleted the image and then restarted the container, what happens?",
+    "question": "18. If you deleted the image and then restarted the container, what happens?",
     "answer": "If image is in registry, it will pull and start. If deleted from registry and not present locally, restart fails with ErrImagePull / ImagePullBackOff."
   },
   {
-    "question": "Troubleshooting 401 vs 403 errors",
+    "question": "19. Troubleshooting 401 vs 403 errors",
     "answer": "401 Unauthorized: authentication failed or not provided. Troubleshoot tokens, headers, expiry. 403 Forbidden: authentication succeeded but not authorized. Troubleshoot IAM policies, RBAC, ACLs, SCPs."
   },
   {
-    "question": "Auto-trigger Jenkins pipeline from GitHub",
+    "question": "20. Auto-trigger Jenkins pipeline from GitHub",
     "answer": "Configure GitHub webhook to Jenkins (push/pull_request events). Enable GitHub hook trigger in Jenkins job. For multibranch pipelines, use GitHub Branch Source plugin."
   },
   {
-    "question": "What is Multibranch Pipeline in Jenkins?",
+    "question": "21. What is Multibranch Pipeline in Jenkins?",
     "answer": "It auto-discovers branches in SCM with Jenkinsfile and creates jobs per branch. It also manages PR jobs. Useful for CI/CD with multiple branches."
   },
   {
-    "question": "Save cost on AWS RDS for non-production",
+    "question": "22. Save cost on AWS RDS for non-production",
     "answer": "Use smaller instances, Single-AZ, stop/start DB when not used, delete old snapshots, use Aurora Serverless, schedule automation for uptime."
   },
   {
-    "question": "Provision 5 identical EC2 instances using Terraform",
+    "question": "23. Provision 5 identical EC2 instances using Terraform",
     "answer": "Use count = 5 in aws_instance resource or use aws_autoscaling_group. Count index helps differentiate tags/names."
   },
   {
-    "question": "Terraform should use existing manually created VPC",
+    "question": "24. Terraform should use existing manually created VPC",
     "answer": "Use data source to look up by tag or name: data \"aws_vpc\" with filter by tag:Name, then reference data.aws_vpc.existing.id."
   },
   {
-    "question": "Have you used dynamic block in Terraform?",
+    "question": "25. Have you used dynamic block in Terraform?",
     "answer": "Yes, dynamic block is used to generate nested blocks like multiple ingress rules dynamically using for_each."
   },
   {
-    "question": "What is pre-hook in Ansible Playbook?",
+    "question": "26. What is pre-hook in Ansible Playbook?",
     "answer": "In Ansible, pre_tasks section runs before roles and tasks. Some tools call it pre-hooks but native is pre_tasks."
   },
   {
-    "question": "How to increase disk space on Linux server",
+    "question": "27. How to increase disk space on Linux server",
     "answer": "For AWS EBS: modify volume size, then grow partition with growpart and resize2fs/xfs_growfs. For LVM: extend VG/LV and resize filesystem. Backup before resizing."
   },
   {
-    "question": "How do you manage versioning for code?",
+    "question": "28. How do you manage versioning for code?",
     "answer": "Use Git branching strategy (GitFlow, trunk-based). Use semantic versioning with tags. Protect main branch with reviews. Automate releases in CI/CD."
   },
   {
-    "question": "Can we edit the tag?",
+    "question": "29. Can we edit the tag?",
     "answer": "Yes, delete and recreate lightweight or annotated tags. If already pushed, must force-push. Not recommended for shared repos."
   },
   {
-    "question": "Process to deploy a hotfix",
+    "question": "30. Process to deploy a hotfix",
     "answer": "Create hotfix branch from release/prod tag, fix issue, run tests, PR to release branch, merge, create new release tag, deploy, validate, monitor."
   },
   {
-    "question": "Explain monitoring setup with Grafana + Prometheus",
+    "question": "31. Explain monitoring setup with Grafana + Prometheus",
     "answer": "Prometheus scrapes metrics, Alertmanager handles alerts, Grafana visualizes. Use exporters (node, kube-state), deploy via Prometheus Operator for Kubernetes."
   },
   {
-    "question": "Troubleshoot CrashLoopBackOff / ImagePullBackOff in K8s",
+    "question": "32. Troubleshoot CrashLoopBackOff / ImagePullBackOff in K8s",
     "answer": "Check kubectl describe for events, image name/tag, imagePullSecrets, registry creds. For CrashLoopBackOff check logs, exit codes, probes, resource limits."
   },
   {
-    "question": "How to check which files are consuming high disk space in Linux?",
+    "question": "33. How to check which files are consuming high disk space in Linux?",
     "answer": "Use du -sh, du --max-depth, sort -hr, ncdu for interactive view. Use lsof | grep deleted to find deleted-but-open files. df -h for mount usage."
   }
 ]
