@@ -1,4 +1,3 @@
-// dql/src/components/JenkinsScripts.tsx
 "use client";
 
 export default function JenkinsScripts() {
@@ -85,7 +84,7 @@ node {
         echo "Build Successful :white_check_mark:"
     } catch (err) {
         echo "Build Failed :x:"
-        error("Pipeline failed: ${err}")
+        error("Pipeline failed: \${err}")
     }
 }`}
         </code>
