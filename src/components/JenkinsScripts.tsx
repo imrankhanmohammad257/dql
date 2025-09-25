@@ -16,7 +16,7 @@ pipeline {
     environment {
         SONARQUBE = 'SonarQubeServer'
         NEXUS = 'NexusServer'
-        SLACK_CHANNEL = '#ci-notifications'
+        'SLACK_CHANNEL' = '#ci-notifications'
     }
 
     stages {
@@ -64,7 +64,7 @@ pipeline {
         <code className="language-groovy">
 {`// Scripted Jenkins Pipeline
 node {
-    def SLACK_CHANNEL = '#ci-notifications'
+    'def SLACK_CHANNEL' = '#ci-notifications'
 
     try {
         stage('Git Clone') {
