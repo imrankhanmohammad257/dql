@@ -16,7 +16,6 @@ pipeline {
     environment {
         SONARQUBE = 'SonarQubeServer'
         NEXUS = 'NexusServer'
-        'SLACK_CHANNEL' = '#ci-notifications'
     }
 
     stages {
@@ -49,10 +48,10 @@ pipeline {
 
     post {
         success {
-            slackSend(channel: "#ci-notifications", message: "Build Successful :white_check_mark:")
+            echo "Build Successful :white_check_mark:"
         }
         failure {
-            slackSend(channel: "#ci-notifications", message: "Build Failed :x:")
+            echo "Build Failed :x:"
         }
     }
 }`}
@@ -64,8 +63,6 @@ pipeline {
         <code className="language-groovy">
 {`// Scripted Jenkins Pipeline
 node {
-    'def SLACK_CHANNEL' = '#ci-notifications'
-
     try {
         stage('Git Clone') {
             git branch: 'main', url: 'https://github.com/username/repo.git'
@@ -85,10 +82,10 @@ node {
             sh 'mvn deploy'
         }
 
-        slackSend(channel: "#ci-notifications", message: "Build Successful :white_check_mark:")
+        echo "Build Successful :white_check_mark:"
     } catch (err) {
-        slackSend(channel: "#ci-notifications", message: "Build Failed :x:")
-        error("Pipeline failed: \\${err}")
+        echo "Build Failed :x:"
+        error("Pipeline failed: ${err}")
     }
 }`}
         </code>
