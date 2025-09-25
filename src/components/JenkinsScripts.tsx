@@ -49,10 +49,10 @@ pipeline {
 
     post {
         success {
-            slackSend(channel: "${SLACK_CHANNEL}", message: "Build Successful :white_check_mark:")
+            slackSend(channel: "#ci-notifications", message: "Build Successful :white_check_mark:")
         }
         failure {
-            slackSend(channel: "${SLACK_CHANNEL}", message: "Build Failed :x:")
+            slackSend(channel: "#ci-notifications", message: "Build Failed :x:")
         }
     }
 }`}
@@ -85,9 +85,9 @@ node {
             sh 'mvn deploy'
         }
 
-        slackSend(channel: SLACK_CHANNEL, message: "Build Successful :white_check_mark:")
+        slackSend(channel: "#ci-notifications", message: "Build Successful :white_check_mark:")
     } catch (err) {
-        slackSend(channel: SLACK_CHANNEL, message: "Build Failed :x:")
+        slackSend(channel: "#ci-notifications", message: "Build Failed :x:")
         error("Pipeline failed: ${err}")
     }
 }`}
