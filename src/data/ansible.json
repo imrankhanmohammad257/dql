@@ -118,10 +118,6 @@
   {
     "question": "30. Real-time: You need to install multiple packages. How do you do it?",
     "answer": "Example task:\n- name: Install multiple packages\n  yum:\n    name:\n      - httpd\n      - git\n      - wget\n    state: present"
-  },
-  {
-  "question": "31. Give an example Ansible playbook to install and start Nginx.",
-  "answer": "Here is a sample playbook:\n\n---\n- name: Install and Start Nginx\n  hosts: web\n  become: yes\n  tasks:\n    - name: Install Nginx\n      apt:\n        name: nginx\n        state: present\n      when: ansible_os_family == 'Debian'\n\n    - name: Install Nginx (RHEL/CentOS)\n      yum:\n        name: nginx\n        state: present\n      when: ansible_os_family == 'RedHat'\n\n    - name: Start and enable Nginx service\n      service:\n        name: nginx\n        state: started\n        enabled: yes"
-}
+  }
 
 ]
