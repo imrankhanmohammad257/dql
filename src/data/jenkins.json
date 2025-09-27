@@ -6,11 +6,11 @@
 
   {
     "question": "***** MAVEN Q&A *****",
-    "answer": "..."
+    "answer": ""
   },
   
   {
-    "question": "1. What is Maven and its benefits? ***** MAVEN Q&A *****",
+    "question": "1. What is Maven and its benefits?,
     "answer": "Maven is a build and project management tool for Java and other languages. It simplifies builds, automates dependency management, and standardizes project structures."
   },
   {
@@ -58,7 +58,12 @@
     "answer": "Super POM is the default parent POM from which all POMs inherit minimal configuration. settings.xml configures Maven execution with proxies, repository locations, and credentials."
   },
   {
-    "question": "13. What is SonarQube?   ***** SonarQube Q&A *****",
+    "question": "***** SonarQube Q&A *****",
+    "answer": ""
+  },
+  
+  {
+    "question": "13. What is SonarQube?",
     "answer": "SonarQube is a code quality management tool that performs continuous inspection of code to detect bugs, vulnerabilities, and code smells."
   },
   {
@@ -78,7 +83,11 @@
     "answer": "Using the SonarQube plugin for Jenkins; configure server and scanner in the pipeline to run analysis automatically."
   },
   {
-    "question": "18. What is Nexus Repository?  ***** NEXUS Q&A ***** ",
+    "question": "***** NEXUS Q&A *****",
+    "answer": ""
+  },
+  {
+    "question": "18. What is Nexus Repository?",
     "answer": "Nexus Repository is a repository manager that stores, manages, and distributes artifacts for build tools like Maven, Gradle, and npm."
   },
   {
