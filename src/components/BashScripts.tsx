@@ -25,15 +25,12 @@ fi`}
         <code className="language-bash">
 {`#!/bin/bash
 # Script 2: Create multiple files
-read -p "Enter number of files to create (1-5): " n
-if [ $n -ge 1 ] && [ $n -le 5 ]; then
-  for ((i=1; i<=n; i++)); do
-    touch "file$i.txt"
-    echo "Created file$i.txt"
-  done
-else
-  echo "Please select a number between 1 and 5"
-fi`}
+for i in {1..5}
+do
+  touch "file$i.txt"
+done
+echo "✅ 5 files created successfully."
+`}
         </code>
       </pre>
 
