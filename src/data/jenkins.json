@@ -3,6 +3,11 @@
     "question": "***** JENKINS Q&A *****",
     "answer": "Maven is a build and project management tool for Java and other languages. It simplifies builds, automates dependency management, and standardizes project structures."
   },
+
+  {
+    "question": "***** MAVEN Q&A *****",
+    "answer": "..."
+  },
   
   {
     "question": "1. What is Maven and its benefits? ***** MAVEN Q&A *****",
