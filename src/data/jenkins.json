@@ -1,14 +1,102 @@
 [
   {
-    "question": "What is Jenkins?",
-    "answer": "Jenkins is an open-source automation server used to build, test, and deploy software."
+    "question": "1. What is Maven and its benefits? ***** MAVEN Q&A *****",
+    "answer": "Maven is a build and project management tool for Java and other languages. It simplifies builds, automates dependency management, and standardizes project structures."
   },
   {
-    "question": "What are Jenkins pipelines?",
-    "answer": "Pipelines are a set of plugins that support implementing and integrating continuous delivery pipelines into Jenkins."
+    "question": "2. Difference between Ant and Maven",
+    "answer": "Ant is procedural, has no lifecycle, and requires manual dependency handling. Maven is declarative, has a built-in lifecycle, uses conventions, and automatically manages dependencies."
   },
   {
-    "question": "What is the difference between declarative and scripted pipelines?",
-    "answer": "Declarative pipelines provide a simpler, opinionated syntax, while scripted pipelines use Groovy for maximum flexibility."
+    "question": "3. What is POM, and its minimum elements?",
+    "answer": "POM (Project Object Model) is an XML file defining project info, dependencies, and build configuration. Minimum elements: project, modelVersion, groupId, artifactId, version."
+  },
+  {
+    "question": "4. Maven build lifecycle & its phases",
+    "answer": "Maven has three lifecycles: Clean (prepares project for build), Default (compiles, tests, packages, installs, deploys), and Site (generates project documentation)."
+  },
+  {
+    "question": "5. Maven repositories: Local, Remote, Central",
+    "answer": "Local repository stores artifacts on developer machine. Remote repository is server-based for downloading dependencies. Central repository is the public Maven community repository."
+  },
+  {
+    "question": "6. Maven commands: mvn install, mvn clean, mvn site",
+    "answer": "mvn install installs artifacts to local repo. mvn clean removes generated build files. mvn site generates project documentation."
+  },
+  {
+    "question": "7. Dependency management & transitive dependencies",
+    "answer": "Maven automatically downloads required libraries from repositories. Transitive dependencies are dependencies of dependencies, included automatically."
+  },
+  {
+    "question": "8. Maven plugins and goals",
+    "answer": "Plugins extend Maven functionality (compile, test, package, document). Goals are specific tasks executed by plugins in a lifecycle phase."
+  },
+  {
+    "question": "9. Maven archetypes and creating a new project",
+    "answer": "Archetypes are project templates to quickly create standard project structures. Use 'mvn archetype:generate' to create a new project from a template."
+  },
+  {
+    "question": "10. Build profiles and activating them",
+    "answer": "Build profiles define environment-specific configurations. They can be activated via CLI, environment variables, OS, or file presence."
+  },
+  {
+    "question": "11. Optional and system dependencies",
+    "answer": "Optional dependencies reduce unnecessary transitive dependencies for certain features. System dependencies are provided by the JDK or system, with system scope."
+  },
+  {
+    "question": "12. Super POM & settings.xml file",
+    "answer": "Super POM is the default parent POM from which all POMs inherit minimal configuration. settings.xml configures Maven execution with proxies, repository locations, and credentials."
+  },
+  {
+    "question": "13. What is SonarQube?   ***** SonarQube Q&A *****",
+    "answer": "SonarQube is a code quality management tool that performs continuous inspection of code to detect bugs, vulnerabilities, and code smells."
+  },
+  {
+    "question": "14. Key features of SonarQube",
+    "answer": "SonarQube provides code quality analysis, bug and vulnerability detection, code duplication detection, and integration with CI/CD pipelines."
+  },
+  {
+    "question": "15. What is a Quality Gate in SonarQube?",
+    "answer": "A Quality Gate is a set of conditions a project must pass to be considered high quality, such as no critical bugs and minimum code coverage."
+  },
+  {
+    "question": "16. What is a SonarQube Scanner?",
+    "answer": "SonarQube Scanner is a tool used to analyze source code and send results to the SonarQube server."
+  },
+  {
+    "question": "17. How to integrate SonarQube with Jenkins?",
+    "answer": "Using the SonarQube plugin for Jenkins; configure server and scanner in the pipeline to run analysis automatically."
+  },
+  {
+    "question": "18. What is Nexus Repository?  ***** NEXUS Q&A ***** ",
+    "answer": "Nexus Repository is a repository manager that stores, manages, and distributes artifacts for build tools like Maven, Gradle, and npm."
+  },
+  {
+    "question": "19. Types of repositories in Nexus",
+    "answer": "Hosted repositories store your artifacts, Proxy repositories cache remote repositories, and Group repositories aggregate multiple repositories into one."
+  },
+  {
+    "question": "20. How to configure Nexus for Maven builds?",
+    "answer": "Update the Maven settings.xml file with the repository URL using <mirror> or <repository> tags to point to Nexus."
+  },
+  {
+    "question": "21. Difference between release and snapshot repositories",
+    "answer": "Release repositories store stable, versioned artifacts. Snapshot repositories store development versions that are updated frequently."
+  },
+  {
+    "question": "22. How to deploy an artifact to Nexus?",
+    "answer": "Artifacts can be deployed using 'mvn deploy' command or manually through the Nexus UI."
+  },
+  {
+    "question": "23. What is a Maven snapshot in Nexus?",
+    "answer": "A snapshot is a version under development. Nexus stores snapshots separately from release artifacts and updates them frequently."
+  },
+  {
+    "question": "24. How does Nexus handle security?",
+    "answer": "Nexus uses role-based access control, authentication, and permissions to secure repositories and manage user access."
+  },
+  {
+    "question": "25. What is a Repository Group in Nexus?",
+    "answer": "A Repository Group combines multiple repositories (hosted or proxy) into a single URL for easier access in builds."
   }
 ]
