@@ -1,14 +1,134 @@
 [
   {
-    "question": "What is Terraform?",
-    "answer": "Terraform is an open-source Infrastructure as Code tool used to provision and manage cloud resources declaratively."
+    "question": "1. What is Terraform and why do we use it?",
+    "answer": "Terraform is an open-source Infrastructure as Code (IaC) tool developed by HashiCorp. It allows us to define, provision, and manage cloud infrastructure in a declarative way. It supports multiple providers like AWS, Azure, and GCP, making it multi-cloud friendly."
   },
   {
-    "question": "What is a Terraform provider?",
-    "answer": "A provider is a plugin that Terraform uses to interact with APIs of cloud platforms and services."
+    "question": "2. What are providers in Terraform?",
+    "answer": "Providers are plugins that allow Terraform to interact with cloud services and APIs. For example, AWS, Azure, GCP, Kubernetes, and GitHub providers. A provider is configured in Terraform to manage resources of that service."
   },
   {
-    "question": "What is the difference between Terraform plan and apply?",
-    "answer": "Terraform plan shows the execution plan without making changes, while apply executes the plan and makes the changes."
+    "question": "3. What is Infrastructure as Code (IaC)?",
+    "answer": "IaC is the practice of managing and provisioning infrastructure through code rather than manual processes. Terraform enables IaC by using configuration files to define infrastructure, which can then be version-controlled and automated."
+  },
+  {
+    "question": "4. What are resources in Terraform?",
+    "answer": "Resources are the basic building blocks in Terraform that represent infrastructure components such as servers (EC2), networks (VPC), storage (S3 buckets), or databases (RDS)."
+  },
+  {
+    "question": "5. What is a Terraform state file?",
+    "answer": "The Terraform state file (terraform.tfstate) keeps track of the real-world resources created by Terraform and maps them with the configuration. It is essential for tracking resource changes and dependencies."
+  },
+  {
+    "question": "6. What are some common Terraform commands?",
+    "answer": "- terraform init → Initialize provider plugins\n- terraform plan → Preview changes\n- terraform apply → Apply changes\n- terraform destroy → Destroy infrastructure\n- terraform validate → Validate configuration syntax"
+  },
+  {
+    "question": "7. When you created the environment using Terraform, what components did you set up using Terraform?",
+    "answer": "I used Terraform to provision infrastructure components such as VPCs, subnets, security groups, IAM roles/policies, EC2 instances, RDS databases, load balancers, and auto-scaling groups. Terraform is best suited for setting up cloud infrastructure in a declarative way."
+  },
+  {
+    "question": "8. How do you make changes to the configuration of already created resources using Terraform?",
+    "answer": "I update the respective Terraform configuration file (.tf) and then run 'terraform plan' to review the changes. If everything looks good, I run 'terraform apply' to update the existing resources without recreating everything."
+  },
+  {
+    "question": "9. When the Terraform state file is created, what do you do with that state file and where do you store and find it?",
+    "answer": "Terraform state file (terraform.tfstate) keeps track of real-world infrastructure and maps it with configuration. In practice, I store it in remote backends like AWS S3 with DynamoDB for state locking, or Terraform Cloud, instead of keeping it locally."
+  },
+  {
+    "question": "10. How do you resolve the issue if you lose the Terraform state file?",
+    "answer": "If the state file is lost, Terraform loses track of infrastructure. To resolve it, I either restore it from a remote backend (S3, Terraform Cloud, etc.) or regenerate it using 'terraform import' for each resource to rebuild the state."
+  },
+  {
+    "question": "11. What are the major features you have found in Terraform that you can talk about?",
+    "answer": "Some key features include Infrastructure as Code (IaC), immutable infrastructure, execution plans, resource graph for dependency handling, modular architecture, provider support for multi-cloud, and state management."
+  },
+  {
+    "question": "12. What is the 'terraform validate' command used for, and can you provide an example?",
+    "answer": "'terraform validate' checks the syntax and configuration correctness without contacting providers. For example, running 'terraform validate' in a project folder ensures .tf files are syntactically valid before applying changes."
+  },
+  {
+    "question": "13. Have you ever heard about the lifecycle in Terraform? Can you talk more about it?",
+    "answer": "Yes, Terraform lifecycle allows controlling resource creation and destruction with meta-arguments like 'create_before_destroy', 'prevent_destroy', and 'ignore_changes'. For example, I use 'create_before_destroy' to avoid downtime during resource replacement."
+  },
+  {
+    "question": "14. Have you worked with tools like CloudFormation, Ansible, or anything similar?",
+    "answer": "Yes, I have worked with Ansible for configuration management and CloudFormation for AWS resource provisioning. Compared to CloudFormation, Terraform supports multiple cloud providers, making it more flexible."
+  },
+  {
+    "question": "15. Do you have any experience with Ansible?",
+    "answer": "Yes, I’ve used Ansible for configuration management and application deployments such as installing packages, configuring servers, managing services, and orchestration across multiple nodes."
+  },
+  {
+    "question": "16. If you had to choose between Ansible and Terraform, which one would you prefer and why?",
+    "answer": "Both serve different purposes. Terraform is better for provisioning infrastructure (servers, networking, databases), while Ansible is better for post-provisioning configuration management. I usually prefer using both together."
+  },
+  {
+    "question": "17. In your current organization, which tool are you using: Ansible, Terraform, or Pulumi?",
+    "answer": "We mainly use Terraform for infrastructure provisioning and Ansible for server configuration. In some projects, we experimented with Pulumi due to its native programming language support."
+  },
+  {
+    "question": "18. Can you talk about any features of Pulumi that you find particularly useful or impressive?",
+    "answer": "Pulumi allows using real programming languages like Python, TypeScript, or Go to define infrastructure, enabling reusability, loops, and conditionals, which is harder to do with Terraform HCL."
+  },
+  {
+    "question": "19. Have you ever heard about Bicep or ARM templates?",
+    "answer": "Yes, they are Microsoft Azure’s IaC tools. ARM templates are JSON-based and Bicep is a simpler, more readable DSL that transpiles into ARM templates. They are Azure-specific, unlike Terraform which is multi-cloud."
+  },
+  {
+    "question": "20. In a scenario where you have 20 resources running on a public cloud (AWS or Azure) and you want to destroy just one resource, how would you go about doing that?",
+    "answer": "I would run 'terraform destroy -target=<resource_type.resource_name>' which allows me to selectively destroy a specific resource without impacting others."
+  },
+  {
+    "question": "21. Have you ever preserved a key that you created using Terraform?",
+    "answer": "Yes, for example AWS key pairs or SSH keys generated using Terraform can be preserved in AWS Secrets Manager, S3 (encrypted), or Vault for later use."
+  },
+  {
+    "question": "22. What happens if you delete the Terraform state file and then run the 'terraform apply' or 'terraform plan' command?",
+    "answer": "Terraform will treat it as a new environment and try to create all resources again since it has no record of existing infrastructure, which can lead to duplication or conflicts."
+  },
+  {
+    "question": "23. Have you ever worked with modules in Terraform?",
+    "answer": "Yes, I use modules to group and reuse resource configurations. For example, creating a reusable VPC module and calling it across multiple projects."
+  },
+  {
+    "question": "24. What are the different types of modules in Terraform?",
+    "answer": "There are root modules (default project), child modules (reusable), published modules from Terraform Registry, and local/private modules stored in source control."
+  },
+  {
+    "question": "25. The module that gets called is what: a parent module or a child module?",
+    "answer": "The module that gets called is a child module. The calling module is the parent (or root) module."
+  },
+  {
+    "question": "26. From where we call a module, what is that module called?",
+    "answer": "That is called a parent or root module depending on context. Root module is the one you execute 'terraform apply' on, and it can call child modules."
+  },
+  {
+    "question": "27. Have you ever heard about remote backends in Terraform? Do you have any ideas or experience with them?",
+    "answer": "Yes, remote backends like S3, Azure Blob, or Terraform Cloud store state files remotely and provide features like state locking and team collaboration. I’ve implemented S3 + DynamoDB backend for AWS."
+  },
+  {
+    "question": "28. How can you provide variable values at runtime in Terraform?",
+    "answer": "We can pass variables via CLI using '-var' flag, define them in a .tfvars file, use environment variables (TF_VAR_name), or from Terraform Cloud workspaces."
+  },
+  {
+    "question": "29. In an organization, how do you manage multiple environments in Terraform?",
+    "answer": "I use workspaces (dev, test, prod), maintain separate state files per environment, and structure code with environment-specific tfvars or separate folders/modules."
+  },
+  {
+    "question": "30. Why do we call Terraform 'Infrastructure as Code' (IaC)? Is there a particular reason for this?",
+    "answer": "Because Terraform allows us to define infrastructure in declarative configuration files (code). This code can be version-controlled, reviewed, and reused like application code."
+  },
+  {
+    "question": "31. Can you explain some drawbacks or challenges you have faced in your career?",
+    "answer": "Some challenges include state file conflicts in team environments, dealing with provider version mismatches, handling drift (manual changes outside Terraform), and ensuring secrets are not exposed in configs."
+  },
+  {
+    "question": "32. Which version of Terraform are you using?",
+    "answer": "In my current organization, we are using **Terraform v1.5.x**, as it is stable and compatible with our cloud providers. However, I keep track of the latest releases (v1.13.3 as of now) for new features and improvements."
+  },
+  {
+    "question": "33. What is Pulumi and what are the differences between Terraform and Pulumi?",
+    "answer": "Pulumi is an open-source Infrastructure as Code tool that lets you define cloud infrastructure using general-purpose programming languages like Python, TypeScript, Go, and C#. The main differences are: \n- Terraform uses HCL (HashiCorp Configuration Language), while Pulumi supports real programming languages.\n- Pulumi allows better logic handling with loops, conditionals, and functions, whereas Terraform requires workarounds.\n- Terraform has a larger ecosystem of community modules and multi-cloud providers, while Pulumi integrates deeply with modern application stacks.\n- Both support state management and remote backends, but Terraform is more mature in this space."
   }
 ]
