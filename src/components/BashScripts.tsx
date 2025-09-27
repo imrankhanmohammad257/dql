@@ -7,6 +7,7 @@ export default function BashScripts() {
       <h2 className="text-xl font-semibold text-pink-700">📂 Bash Scripts</h2>
 
       {/* 1. Check if a directory exists */}
+      <h3 className="text-lg font-semibold mb-2">📁 1. How do you check if a directory exists?</h3>
       <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
         <code className="language-bash">
 {`#!/bin/bash
@@ -21,6 +22,7 @@ fi`}
       </pre>
 
       {/* 2. Create multiple files */}
+      <h3 className="text-lg font-semibold mb-2">📝 2. How do you create multiple files in a loop?</h3>
       <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
         <code className="language-bash">
 {`#!/bin/bash
@@ -34,6 +36,7 @@ echo "✅ 5 files created successfully."`}
       </pre>
 
       {/* 3. Backup a directory */}
+      <h3 className="text-lg font-semibold mb-2">💾 3. How do you backup a directory?</h3>
       <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
         <code className="language-bash">
 {`#!/bin/bash
@@ -46,6 +49,7 @@ echo "Backup completed"`}
       </pre>
 
       {/* 4. Install nginx */}
+      <h3 className="text-lg font-semibold mb-2">🌐 4. How do you install and start nginx?</h3>
       <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
         <code className="language-bash">
 {`#!/bin/bash
@@ -58,6 +62,7 @@ sudo systemctl enable nginx`}
       </pre>
 
       {/* 5. Install Apache Tomcat */}
+      <h3 className="text-lg font-semibold mb-2">🔥 5. How do you install Apache Tomcat?</h3>
       <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
         <code className="language-bash">
 {`#!/bin/bash
@@ -73,6 +78,7 @@ sudo sh /opt/tomcat9/bin/startup.sh`}
       </pre>
 
       {/* 6. Check if nginx service is running */}
+      <h3 className="text-lg font-semibold mb-2">⚡ 6. How do you check if nginx is running and start if not?</h3>
       <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
         <code className="language-bash">
 {`#!/bin/bash
@@ -87,6 +93,7 @@ fi`}
       </pre>
 
       {/* 7. Check and create directory if not exists */}
+      <h3 className="text-lg font-semibold mb-2">📂 7. How do you check and create a directory if it does not exist?</h3>
       <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
         <code className="language-bash">
 {`#!/bin/bash
@@ -102,6 +109,7 @@ fi`}
       </pre>
 
       {/* 8. Delete last 3 lines from a file */}
+      <h3 className="text-lg font-semibold mb-2">🗑️ 8. How do you delete last 3 lines from a file?</h3>
       <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
         <code className="language-bash">
 {`#!/bin/bash
@@ -113,6 +121,7 @@ sed -i '$d' filename`}
       </pre>
 
       {/* 9. Monitor CPU usage */}
+      <h3 className="text-lg font-semibold mb-2">⚡ 9. How do you monitor CPU usage &amp; alert if &gt;80%?</h3>
       <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
         <code className="language-bash">
 {`#!/bin/bash
@@ -125,6 +134,7 @@ fi`}
       </pre>
 
       {/* 10. Monitor Disk usage */}
+      <h3 className="text-lg font-semibold mb-2">💽 10. How do you monitor Disk usage &amp; alert if &gt;80%?</h3>
       <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
         <code className="language-bash">
 {`#!/bin/bash
@@ -137,6 +147,7 @@ fi`}
       </pre>
 
       {/* 11. Monitor Memory usage */}
+      <h3 className="text-lg font-semibold mb-2">🧠 11. How do you monitor Memory usage &amp; alert if &gt;80%?</h3>
       <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
         <code className="language-bash">
 {`#!/bin/bash
