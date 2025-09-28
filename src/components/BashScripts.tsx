@@ -113,10 +113,8 @@ fi`}
       <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
         <code className="language-bash">
 {`#!/bin/bash
-# Script 8: Delete last 3 lines
-sed -i '$d' filename
-sed -i '$d' filename
-sed -i '$d' filename`}
+# Script 8: Delete last 3 lines from a file
+sed -i : -e '$d' -e '$d' -e '$d' filename`}
         </code>
       </pre>
 
