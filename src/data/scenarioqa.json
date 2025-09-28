@@ -130,5 +130,28 @@
   {
     "question": "33. How to check which files are consuming high disk space in Linux?",
     "answer": "Use du -sh, du --max-depth, sort -hr, ncdu for interactive view. Use lsof | grep deleted to find deleted-but-open files. df -h for mount usage."
+  },
+  
+  {
+    "question": "34. What is an endpoint and what are the types of endpoints?",
+    "answer": "An endpoint is a network address (IP:Port or DNS) where a service can be accessed. Types include API endpoints (REST/gRPC URLs), Service endpoints (Kubernetes ClusterIP, NodePort, LoadBalancer), Database endpoints (RDS connection string), Storage endpoints (S3 bucket URL), Public vs Private endpoints, and Managed Service endpoints like AWS PrivateLink or CloudFront."
+  },
+  {
+    "question": "35. How will you ensure zero downtime for your application?",
+    "answer": "Zero downtime can be achieved by using readiness and liveness probes, enabling connection draining in load balancers, deploying with rolling/blue-green/canary strategies, applying backward-compatible DB schema changes, making applications stateless, scaling with autoscaling and headroom, and using feature flags for gradual rollout."
+  },
+  {
+    "question": "36. When should we use Rolling Update and when should we use Blue-Green strategy?",
+    "answer": "Rolling Update replaces instances/pods gradually, suitable for low-risk, frequent updates with lower cost. Blue-Green keeps two full environments (blue and green) and switches traffic instantly, best for major releases, risky changes, and instant rollback. Rolling is cost-efficient but slower rollback, while Blue-Green is safer but more expensive."
+  },
+  {
+    "question": "37. How are you utilising AWS Karpenter?",
+    "answer": "AWS Karpenter is used as an open-source autoscaler for EKS that provisions EC2 nodes dynamically. It replaces cluster-autoscaler for faster scaling and better bin-packing. Setup involves installing the controller, defining AWSNodeTemplate (subnets, AMI, IAM role), and creating a Provisioner (instance types, zones, TTL). Benefits include cost savings with Spot + On-Demand, faster scale-ups, and efficient workload scheduling."
+  },
+  {
+    "question": "38. How to create infrastructure for three environments like dev, staging, and prod, and how to manage the state file and configuration for them?",
+    "answer": "Use a structured Terraform repo with shared modules and separate environment folders (envs/dev, staging, prod). Manage state separately using remote backend (S3 + DynamoDB locking) for each environment. Store configurations in environment-specific tfvars files. Keep secrets in AWS Secrets Manager or SSM, not in tfstate. Best practices include isolating state files, enabling S3 versioning, applying changes via CI/CD pipeline with approvals for prod, and restricting access with IAM policies."
   }
 ]
+
+  
