@@ -1,10 +1,82 @@
 [
   {
-    "question": "What is a Bash script?",
-    "answer": "A Bash script is a file containing a series of commands that can be executed in the Bash shell."
+    "question": "1. What is Bash and why is it used?",
+    "answer": "Bash (Bourne Again SHell) is a Unix shell and command language used for command-line scripting, automating tasks, and system administration."
   },
   {
-    "question": "How to make a Bash script executable?",
-    "answer": "Use the command `chmod +x script.sh` to make a script executable."
+    "question": "2. How do you check if a file or directory exists in Bash?",
+    "answer": "Use the test command or [ ] syntax: `if [ -f filename ]; then ...` for files or `if [ -d directory ]; then ...` for directories."
+  },
+  {
+    "question": "3. How do you make a Bash script executable?",
+    "answer": "Use `chmod +x script.sh` to make a script executable."
+  },
+  {
+    "question": "4. How do you read user input in Bash?",
+    "answer": "Use the `read` command: `read variable_name`."
+  },
+  {
+    "question": "5. How do you pass command-line arguments to a Bash script?",
+    "answer": "Arguments are accessed as `$1`, `$2`, etc., and `$0` is the script name."
+  },
+  {
+    "question": "6. How do you loop through a list of items in Bash?",
+    "answer": "Use a for loop: `for item in list; do ...; done` or a while loop with condition."
+  },
+  {
+    "question": "7. How do you check the exit status of a command?",
+    "answer": "Use the special variable `$?` which contains the exit code of the last executed command."
+  },
+  {
+    "question": "8. How do you redirect output and errors in Bash?",
+    "answer": "Use `>` for stdout, `2>` for stderr, `&>` for both: `command > output.txt 2> error.txt`."
+  },
+  {
+    "question": "9. How do you find a string in a file?",
+    "answer": "Use `grep` command: `grep 'search_string' filename`."
+  },
+  {
+    "question": "10. How do you schedule a script to run automatically?",
+    "answer": "Use `cron` jobs. Edit crontab with `crontab -e` and define schedule and command."
+  },
+  {
+    "question": "11. How do you handle command-line arguments in a loop?",
+    "answer": "Use a while loop with `shift` to iterate: `while [ $# -gt 0 ]; do echo $1; shift; done`."
+  },
+  {
+    "question": "12. How do you check memory, CPU, and disk usage in Bash?",
+    "answer": "Use commands like `free`, `top` or `vmstat` for memory/CPU, and `df -h` for disk usage."
+  },
+  {
+    "question": "13. How do you append text to a file?",
+    "answer": "Use `>>` operator: `echo 'text' >> file.txt`."
+  },
+  {
+    "question": "14. How do you handle errors in a Bash script?",
+    "answer": "Check exit codes with `$?`, use `set -e` to exit on errors, or `trap` to handle signals."
+  },
+  {
+    "question": "15. How do you extract a substring from a string in Bash?",
+    "answer": "Use `${variable:position:length}` syntax: `echo ${string:0:5}`."
+  },
+  {
+    "question": "16. How do you replace text in a file using Bash?",
+    "answer": "Use `sed`: `sed -i 's/old_text/new_text/g' filename`."
+  },
+  {
+    "question": "17. How do you create a function in Bash?",
+    "answer": "Use the syntax: `function_name() { commands; }` and call it by `function_name`."
+  },
+  {
+    "question": "18. How do you check if a variable is empty or not?",
+    "answer": "Use: `if [ -z \"$VAR\" ]; then echo 'Empty'; else echo 'Not empty'; fi`."
+  },
+  {
+    "question": "19. How do you run a command in the background?",
+    "answer": "Add `&` at the end of the command: `command &`."
+  },
+  {
+    "question": "20. How do you loop through files in a directory?",
+    "answer": "Use: `for file in /path/*; do echo $file; done`."
   }
 ]
