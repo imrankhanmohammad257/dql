@@ -17,8 +17,7 @@
   },
   {
     "question": "5. Give temporary 5-minute access to a single S3 object while keeping bucket private",
-    "answer": "Use AWS CLI or SDK to generate a presigned URL with expires-in 300 seconds. Alternatively use temporary assume-role credentials, but presigned URL is simplest.aws s3 presign s3://my-bucket/my-object.txt --expires-in 300
-"
+    "answer": "Use AWS CLI or SDK to generate a presigned URL with expires-in 300 seconds. Alternatively use temporary assume-role credentials, but presigned URL is simplest.  aws s3 presign s3://my-bucket/my-object.txt --expires-in 300"
   },
   {
     "question": "6. Static website in region A must fetch images stored in a bucket in region B",
