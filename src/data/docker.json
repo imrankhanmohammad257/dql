@@ -1,10 +1,82 @@
 [
   {
-    "question": "What is Docker?",
-    "answer": "Docker is a platform for developing, shipping, and running applications inside lightweight containers."
+    "question": "1. What is Docker?",
+    "answer": "Docker is a platform for building, running, and managing applications inside containers. It ensures portability, isolation, and lightweight deployment compared to VMs."
   },
   {
-    "question": "What is the difference between a container and an image?",
-    "answer": "An image is a read-only template, while a container is a running instance of an image."
+    "question": "2. How are containers different from Virtual Machines?",
+    "answer": "Containers share the host OS kernel, start in seconds, and are lightweight. VMs have their own OS, take minutes to boot, and are heavier."
+  },
+  {
+    "question": "3. What is Docker Lifecycle?",
+    "answer": "Image creation → Container run → Container stop → Container remove. Typical commands: docker build, docker run, docker stop, docker rm."
+  },
+  {
+    "question": "4. What are the main components of Docker?",
+    "answer": "Docker Client, Docker Daemon, Docker Images, Docker Containers, Docker Registry."
+  },
+  {
+    "question": "5. What is the difference between COPY and ADD in Dockerfile?",
+    "answer": "COPY only copies files from local system into the image. ADD can also extract tar archives and fetch files from remote URLs."
+  },
+  {
+    "question": "6. What is the difference between CMD and ENTRYPOINT in Dockerfile?",
+    "answer": "CMD provides a default command that can be overridden. ENTRYPOINT defines a fixed command; user arguments are appended."
+  },
+  {
+    "question": "7. What are the networking types in Docker? What is default?",
+    "answer": "Bridge (default), Host, None, and Overlay. The default networking type is Bridge."
+  },
+  {
+    "question": "8. How to isolate networking between containers?",
+    "answer": "Use custom bridge networks, firewall rules, or user-defined networks with separate subnets to isolate communication."
+  },
+  {
+    "question": "9. What is a Multi-stage build in Docker?",
+    "answer": "It allows creating smaller images by using multiple FROM statements. Build dependencies are in one stage, and only required files are copied to the final image."
+  },
+  {
+    "question": "10. What are Distroless Images in Docker?",
+    "answer": "Distroless images contain only the application and its runtime libraries without OS or package managers, reducing vulnerabilities and image size."
+  },
+  {
+    "question": "11. What real-time challenges have you faced with Docker?",
+    "answer": "Single daemon process creates SPOF, Docker Daemon running as root is a security risk, and too many containers on one host can cause resource constraints."
+  },
+  {
+    "question": "12. What steps would you take to secure containers?",
+    "answer": "Use minimal or distroless images, configure networking properly, scan images with security tools, run as non-root, and apply resource limits."
+  },
+  {
+    "question": "13. What is Docker Daemon?",
+    "answer": "Docker Daemon (dockerd) is a background process that manages images, containers, volumes, and networks. It listens to client commands and interacts with registries."
+  },
+  {
+    "question": "14. What is Docker Registry?",
+    "answer": "A Docker Registry stores images. Docker Hub is the default public registry, but private registries (AWS ECR, Nexus, Artifactory) are also used."
+  },
+  {
+    "question": "15. What is Docker Compose?",
+    "answer": "Docker Compose is a tool for defining and running multi-container applications using a YAML file to configure services, networks, and volumes."
+  },
+  {
+    "question": "16. How do you persist data in Docker?",
+    "answer": "Use Volumes (preferred) or Bind Mounts. Volumes are managed by Docker and survive container restarts."
+  },
+  {
+    "question": "17. How do you optimize Docker Images?",
+    "answer": "Use smaller base images like Alpine, multi-stage builds, combine RUN statements, and clean up package caches."
+  },
+  {
+    "question": "18. How do you monitor Docker containers?",
+    "answer": "Using commands like docker stats, docker logs, and external tools like Prometheus, Grafana, or cAdvisor."
+  },
+  {
+    "question": "19. What is the difference between Docker Swarm and Kubernetes?",
+    "answer": "Docker Swarm is Docker's native clustering and orchestration tool. Kubernetes is a more advanced, widely adopted container orchestration system with richer features."
+  },
+  {
+    "question": "20. What happens when you run docker run?",
+    "answer": "The client sends request to daemon, image is checked locally, pulled from registry if not available, then a container is created and started."
   }
 ]
