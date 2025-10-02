@@ -1,0 +1,59 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_HUB_CREDENTIALS = credentials('dockerhub') // replace with your Jenkins Docker Hub credentials ID
+        IMAGE_NAME = "imrankhanmohammad257/dql-app"
+        IMAGE_TAG = "latest"
+        GIT_REPO = "https://github.com/imrankhanmohammad257/dql.git" // replace with your repo
+    }
+
+    stages {
+
+        stage('Clone Repository') {
+            steps {
+                echo "Cloning Git repository..."
+                git branch: 'main', url: "${GIT_REPO}"
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                echo "Building Docker image..."
+                sh """
+                    docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .
+                """
+            }
+        }
+
+        stage('Run Docker Container') {
+            steps {
+                echo "Stopping any existing container..."
+                sh """
+                    docker stop dql-app || true
+                    docker rm dql-app || true
+                    docker run -d -p 3000:3000 --name dql-app ${IMAGE_NAME}:${IMAGE_TAG}
+                """
+            }
+        }
+
+        stage('Push Docker Image to Docker Hub') {
+            steps {
+                echo "Logging in to Docker Hub and pushing image..."
+                sh """
+                    echo "${DOCKER_HUB_CREDENTIALS_PSW}" | docker login -u "${DOCKER_HUB_CREDENTIALS_USR}" --password-stdin
+                    docker push ${IMAGE_NAME}:${IMAGE_TAG}
+                """
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "Pipeline completed successfully! Your DQL app is running at http://<EC2-public-ip>:3000"
+        }
+        failure {
+            echo "Pipeline failed! Check logs for errors."
+        }
+    }
+}
