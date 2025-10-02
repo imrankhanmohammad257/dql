@@ -151,6 +151,46 @@
   {
     "question": "38. How to create infrastructure for three environments like dev, staging, and prod, and how to manage the state file and configuration for them?",
     "answer": "Use a structured Terraform repo with shared modules and separate environment folders (envs/dev, staging, prod). Manage state separately using remote backend (S3 + DynamoDB locking) for each environment. Store configurations in environment-specific tfvars files. Keep secrets in AWS Secrets Manager or SSM, not in tfstate. Best practices include isolating state files, enabling S3 versioning, applying changes via CI/CD pipeline with approvals for prod, and restricting access with IAM policies."
+  },  
+  {
+    "question": "39. In your project, how did you handle application logs inside Docker containers?",
+    "answer": "By default, Docker stores logs in JSON format. In real-time, we redirect logs to centralized tools like ELK stack (Elasticsearch, Logstash, Kibana), Splunk, or use Docker logging drivers (json-file, syslog, fluentd) to manage and analyze logs."
+  },
+  {
+    "question": "40. If a container crashes frequently, how would you troubleshoot?",
+    "answer": "First check logs using 'docker logs <container_id>', then check resource usage with 'docker stats'. Verify entrypoint/CMD configuration, health checks, and dependencies. For debugging, start container in interactive mode and check application-level issues."
+  },
+  {
+    "question": "41. What steps would you take if a Docker image size is very large?",
+    "answer": "Use multi-stage builds, choose smaller base images (like alpine), remove unnecessary packages, clean cache after installs, and use .dockerignore to exclude unwanted files."
+  },
+  {
+    "question": "42. If two containers need to communicate but they are on different networks, how do you solve it?",
+    "answer": "You can create a user-defined bridge network and attach both containers to the same network, or expose container ports and use service discovery in orchestrators like Kubernetes."
+  },
+  {
+    "question": "43. How do you secure Docker in production?",
+    "answer": "Use rootless containers, apply resource limits (CPU/memory), enable Docker Content Trust for image signing, scan images for vulnerabilities, and use distroless or minimal images."
+  },
+  {
+    "question": "44. Have you faced issues with Docker Daemon being a single point of failure?",
+    "answer": "Yes, in real-time setups the Docker daemon crash brings down all containers on that host. To mitigate, use orchestrators like Kubernetes or Docker Swarm to distribute workloads across multiple nodes."
+  },
+  {
+    "question": "45. How do you persist database data inside containers?",
+    "answer": "We use Docker volumes for persistence so that data remains even if the container is removed. For production, we map volumes to external storage solutions like EBS, NFS, or CSI drivers in Kubernetes."
+  },
+  {
+    "question": "46. What is your approach if Docker Hub rate limits image pulls?",
+    "answer": "Configure a local private registry (like Nexus, Artifactory, or AWS ECR) to cache/pull images internally, and use authenticated Docker Hub accounts with higher pull limits."
+  },
+  {
+    "question": "47. Have you faced a container consuming high CPU or memory?",
+    "answer": "Yes, to handle it we set resource limits using '--cpus' and '--memory' in docker run or within Docker Compose/Kubernetes manifests. Monitoring tools (cAdvisor, Prometheus) help detect such issues early."
+  },
+  {
+    "question": "48. What is your strategy for patching vulnerabilities in Docker images?",
+    "answer": "We use image scanning tools like Trivy, Anchore, or Clair to detect CVEs, then rebuild images with updated base images and security patches. We also maintain CI/CD pipelines to automate scans."
   }
 ]
 
