@@ -1,4 +1,3 @@
-
 // dql/src/components/K8sScripts.tsx
 "use client";
 
@@ -83,22 +82,7 @@ data:
         </code>
       </pre>
 
-      {/* 5. Secret */}
-      <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
-        <code className="language-yaml">
-{`---
-apiVersion: v1
-kind: Secret
-metadata:
-  name: db-secret
-type: Opaque
-data:
-  username: bXl1c2Vy
-  password: cGFzc3dvcmQ=`}
-        </code>
-      </pre>
-
-      {/* 6. PV + PVC */}
+      {/* 5. PersistentVolume + PersistentVolumeClaim */}
       <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
         <code className="language-yaml">
 {`---
@@ -125,111 +109,6 @@ spec:
   resources:
     requests:
       storage: 5Gi`}
-        </code>
-      </pre>
-
-      {/* 7. Horizontal Pod Autoscaler */}
-      <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
-        <code className="language-yaml">
-{`---
-apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
-metadata:
-  name: nginx-hpa
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: nginx-deployment
-  minReplicas: 2
-  maxReplicas: 5
-  metrics:
-    - type: Resource
-      resource:
-        name: cpu
-        target:
-          type: Utilization
-          averageUtilization: 50`}
-        </code>
-      </pre>
-
-      {/* 8. DaemonSet */}
-      <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
-        <code className="language-yaml">
-{`---
-apiVersion: apps/v1
-kind: DaemonSet
-metadata:
-  name: fluentd-daemon
-spec:
-  selector:
-    matchLabels:
-      app: fluentd
-  template:
-    metadata:
-      labels:
-        app: fluentd
-    spec:
-      containers:
-        - name: fluentd
-          image: fluent/fluentd:latest`}
-        </code>
-      </pre>
-
-      {/* 9. Ingress */}
-      <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
-        <code className="language-yaml">
-{`---
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: nginx-ingress
-spec:
-  rules:
-    - host: example.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: nginx-service
-                port:
-                  number: 80`}
-        </code>
-      </pre>
-
-      {/* 10. ServiceAccount + RBAC */}
-      <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
-        <code className="language-yaml">
-{`---
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: dev-sa
-
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  name: dev-role
-rules:
-  - apiGroups: [""]
-    resources: ["pods"]
-    verbs: ["get", "list", "create", "delete"]
-
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  name: dev-rolebinding
-subjects:
-  - kind: ServiceAccount
-    name: dev-sa
-roleRef:
-  kind: Role
-  name: dev-role
-  apiGroup: rbac.authorization.k8s.io`}
         </code>
       </pre>
     </div>
