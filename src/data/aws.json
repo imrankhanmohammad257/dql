@@ -21,190 +21,217 @@
       "answer": "EC2 provides virtual servers for full control, while Lambda is serverless and event-driven with automatic scaling."
     },
     {
-      "question": "6. What is ECS and EKS?",
-      "answer": "ECS is AWS’s container orchestration service, while EKS is a managed Kubernetes service for running containerized applications."
+      "question": "6. Scenario: Your EC2 instance is running high CPU during peak hours. How do you handle it?",
+      "answer": "Use Auto Scaling to add more instances based on CloudWatch metrics, or optimize the application code to reduce CPU usage."
     },
     {
-      "question": "7. How do you secure EC2 instances?",
-      "answer": "Use security groups, key pairs for SSH, IAM roles, patch updates, and limit network exposure."
+      "question": "7. Scenario: You need a serverless API for image processing. Which AWS service would you choose?",
+      "answer": "Use AWS Lambda combined with API Gateway to process images without managing servers."
     },
     {
-      "question": "8. What are AMIs?",
-      "answer": "Amazon Machine Images (AMIs) are templates used to launch EC2 instances, including OS, configuration, and software."
+      "question": "8. Scenario: You want to deploy a containerized application on AWS. What options are available?",
+      "answer": "You can use ECS for managed containers, EKS for Kubernetes, or Fargate for serverless containers."
     },
     {
-      "question": "9. Difference between On-Demand, Reserved, and Spot Instances?",
-      "answer": "On-Demand: pay per use; Reserved: long-term discount; Spot: cheap but interruptible."
+      "question": "9. Scenario: Your EC2 instance crashed and you lost data. How can you prevent it in future?",
+      "answer": "Use EBS snapshots for backups, enable Auto Recovery, or store data in persistent storage like S3 or EFS."
     },
     {
-      "question": "10. How do you monitor EC2 performance?",
-      "answer": "Use CloudWatch metrics, CloudWatch alarms, and logs to track CPU, memory, disk, and network performance."
+      "question": "10. Scenario: Multiple developers need temporary access to EC2 instances. How do you manage it securely?",
+      "answer": "Create IAM roles with limited permissions and use Session Manager or temporary key pairs instead of sharing permanent SSH keys."
+    },
+    {
+      "question": "11. Scenario: You want to reduce costs of EC2 instances that run occasionally. What would you do?",
+      "answer": "Use Spot Instances for non-critical workloads or schedule instances to stop during off-hours using Lambda or CloudWatch events."
+    },
+    {
+      "question": "12. Scenario: You want to deploy a high-availability application across multiple regions. How?",
+      "answer": "Deploy EC2 instances in multiple availability zones, use ELB for traffic distribution, and optionally replicate across regions."
+    },
+    {
+      "question": "13. Scenario: Your application requires GPU compute. Which EC2 instance type should you choose?",
+      "answer": "Choose GPU-enabled EC2 instances such as P3, P4, or G4 depending on workload requirements."
+    },
+    {
+      "question": "14. Scenario: You need zero-downtime deployments on EC2. How can you achieve it?",
+      "answer": "Use blue/green deployment strategy with load balancer routing or Auto Scaling replacement."
+    },
+    {
+      "question": "15. Scenario: A sudden spike in traffic overwhelms your EC2 instances. How to automatically scale?",
+      "answer": "Configure CloudWatch alarms on CPU/network thresholds and attach them to Auto Scaling groups to launch additional instances."
+    },
+    {
+      "question": "16. Scenario: You want EC2 instances to access S3 securely without hardcoding credentials. How?",
+      "answer": "Attach an IAM role with appropriate S3 permissions to EC2 instances."
     }
   ],
+
   "Networking": [
     {
-      "question": "11. What is VPC?",
+      "question": "1. What is VPC?",
       "answer": "A Virtual Private Cloud (VPC) is a logically isolated network within AWS where you can launch resources securely."
     },
     {
-      "question": "12. What is a subnet?",
+      "question": "2. What is a subnet?",
       "answer": "A subnet is a segment of a VPC’s IP address range where you can place resources."
     },
     {
-      "question": "13. What is Internet Gateway?",
-      "answer": "An Internet Gateway allows communication between a VPC and the Internet."
+      "question": "3. Scenario: You want to expose some EC2 instances to the Internet but keep others private. How do you design your network?",
+      "answer": "Use public subnets for Internet-facing instances and private subnets for internal instances, with NAT gateway for outbound Internet access."
     },
     {
-      "question": "14. What are security groups?",
-      "answer": "Security groups act as virtual firewalls for EC2 instances, controlling inbound and outbound traffic."
+      "question": "4. Scenario: You want highly available web applications. How do you design subnets across AZs?",
+      "answer": "Create multiple subnets across different Availability Zones and deploy instances/load balancers in each subnet."
     },
     {
-      "question": "15. What is a NAT Gateway?",
-      "answer": "A NAT Gateway allows instances in a private subnet to access the Internet without exposing them publicly."
-    },
-    {
-      "question": "16. What is Route 53?",
+      "question": "5. What is Route 53?",
       "answer": "Route 53 is AWS’s scalable DNS and domain registration service."
     },
     {
-      "question": "17. Difference between public and private subnets?",
-      "answer": "Public subnets have direct Internet access; private subnets do not and require NAT for outbound Internet traffic."
+      "question": "6. Scenario: You want your application served globally with low latency. Which AWS service helps?",
+      "answer": "Use CloudFront CDN to cache content at edge locations worldwide."
     },
     {
-      "question": "18. What is CloudFront?",
-      "answer": "CloudFront is AWS’s CDN service to deliver content globally with low latency."
+      "question": "7. Scenario: You need secure connectivity between your on-premise data center and AWS. What options exist?",
+      "answer": "Use AWS VPN or AWS Direct Connect for private connectivity."
     },
     {
-      "question": "19. Difference between VPC peering and VPN?",
-      "answer": "VPC peering connects VPCs privately within AWS; VPN connects on-premise networks securely to AWS VPCs."
+      "question": "8. Scenario: How to prevent unauthorized access to EC2 instances over the network?",
+      "answer": "Use Security Groups to allow only specific IPs/ports and Network ACLs for subnet-level restrictions."
     },
     {
-      "question": "20. What is Elastic Load Balancer (ELB)?",
-      "answer": "ELB automatically distributes incoming traffic across multiple EC2 instances for high availability."
+      "question": "9. Scenario: How to balance traffic across multiple EC2 instances in different AZs?",
+      "answer": "Use Elastic Load Balancer (ALB or NLB) to distribute traffic across instances in multiple availability zones."
+    },
+    {
+      "question": "10. Scenario: How do you connect two VPCs in the same AWS account securely?",
+      "answer": "Use VPC Peering or Transit Gateway to allow secure private communication between VPCs."
+    },
+    {
+      "question": "11. Scenario: Your web application needs high availability across multiple AZs. How do you design it?",
+      "answer": "Use an Elastic Load Balancer (ALB/NLB) to distribute traffic across EC2 instances in multiple availability zones."
+    },
+    {
+      "question": "12. Scenario: You want to route traffic based on URL paths. Which AWS service do you use?",
+      "answer": "Use an Application Load Balancer (ALB) with path-based routing rules."
+    },
+    {
+      "question": "13. Scenario: Your application requires TCP-level load balancing. Which service is suitable?",
+      "answer": "Use a Network Load Balancer (NLB) for TCP/UDP traffic at ultra-low latency."
+    },
+    {
+      "question": "14. Scenario: How do you make sure Load Balancer scales automatically during traffic spikes?",
+      "answer": "Elastic Load Balancers automatically scale in response to incoming traffic without manual intervention."
+    },
+    {
+      "question": "15. Scenario: How do you integrate SSL termination for your web app?",
+      "answer": "Use an ALB with HTTPS listener and attach an SSL certificate from AWS Certificate Manager."
+    },
+    {
+      "question": "16. Scenario: How do you monitor Load Balancer performance?",
+      "answer": "Use CloudWatch metrics like RequestCount, Latency, HTTPCode_ELB_5XX for monitoring."
+    },
+    {
+      "question": "17. Scenario: You want to restrict access to your Load Balancer based on IPs. How?",
+      "answer": "Use security groups or ALB listener rules with IP-based restrictions."
+    },
+    {
+      "question": "18. Scenario: Your Load Balancer shows uneven traffic across targets. How do you troubleshoot?",
+      "answer": "Check target health status, stickiness configuration, and ensure even distribution across AZs."
+    },
+    {
+      "question": "19. Scenario: You want to redirect HTTP traffic to HTTPS automatically. How?",
+      "answer": "Configure an ALB listener rule to redirect HTTP (port 80) to HTTPS (port 443)."
+    },
+    {
+      "question": "20. Scenario: How do you handle sticky sessions for a web app behind Load Balancer?",
+      "answer": "Enable session stickiness on the Load Balancer using duration-based or application cookie-based stickiness."
     }
   ],
+
   "Storage": [
     {
-      "question": "21. What is S3?",
+      "question": "1. What is S3?",
       "answer": "Amazon S3 is object storage designed to store and retrieve any amount of data from anywhere."
     },
     {
-      "question": "22. Difference between S3, EBS, and EFS?",
-      "answer": "S3: object storage; EBS: block storage for EC2; EFS: file storage accessible by multiple EC2 instances."
+      "question": "2. Scenario: You want to host a static website with high availability. Which AWS service do you use?",
+      "answer": "Use Amazon S3 to host static website content and optionally CloudFront for global distribution."
     },
     {
-      "question": "23. What are S3 storage classes?",
-      "answer": "S3 offers Standard, Standard-IA, One Zone-IA, Glacier, and Glacier Deep Archive for cost and access optimization."
+      "question": "3. Scenario: You need to archive old logs that are rarely accessed. What AWS service do you use?",
+      "answer": "Use Amazon S3 Glacier for low-cost archival storage."
     },
     {
-      "question": "24. How do you secure S3 buckets?",
-      "answer": "Use bucket policies, IAM policies, ACLs, encryption at rest and in transit, and enable versioning."
+      "question": "4. Scenario: How do you secure sensitive data in S3?",
+      "answer": "Use server-side encryption with KMS keys, bucket policies, and IAM policies to restrict access."
     },
     {
-      "question": "25. What is S3 versioning?",
-      "answer": "Versioning allows multiple versions of an object in a bucket, helping with recovery from accidental deletion or overwrite."
+      "question": "5. Scenario: How to enable versioning in S3 to recover accidental deletions?",
+      "answer": "Enable versioning on the S3 bucket so all object versions are retained and can be restored."
     },
     {
-      "question": "26. What is Glacier?",
-      "answer": "Amazon Glacier is low-cost archival storage for infrequently accessed data with retrieval time from minutes to hours."
+      "question": "6. Scenario: Multiple EC2 instances need shared storage. What AWS service do you use?",
+      "answer": "Use Amazon EFS (Elastic File System) for scalable, shared file storage."
     },
     {
-      "question": "27. Difference between EBS and instance store?",
-      "answer": "EBS is persistent storage that survives instance termination; instance store is ephemeral and tied to the lifecycle of an instance."
+      "question": "7. Scenario: You need block-level storage for a database. Which AWS service?",
+      "answer": "Use Amazon EBS volumes attached to EC2 instances."
     },
     {
-      "question": "28. What is AWS Backup?",
-      "answer": "AWS Backup automates and centralizes backups for AWS services like EBS, RDS, DynamoDB, and EFS."
+      "question": "8. Scenario: You want to move cold data to cheaper storage automatically. How?",
+      "answer": "Use S3 Lifecycle Policies to transition objects to infrequent access or Glacier storage classes."
     },
     {
-      "question": "29. What is lifecycle policy in S3?",
-      "answer": "Lifecycle policies automatically transition objects between storage classes or delete them after a specified period."
+      "question": "9. Scenario: You want to replicate S3 data across regions for disaster recovery. How?",
+      "answer": "Enable S3 Cross-Region Replication (CRR) to automatically replicate objects to another region."
     },
     {
-      "question": "30. How do you share S3 objects publicly?",
-      "answer": "By setting bucket policies, object ACLs, or using pre-signed URLs with expiration."
+      "question": "10. Scenario: How do you handle high-volume data uploads efficiently to S3?",
+      "answer": "Use Multipart Upload API to upload large files in parallel, reducing time and increasing reliability."
     }
   ],
+
   "Monitoring & Security": [
     {
-      "question": "31. What is CloudWatch?",
+      "question": "1. What is CloudWatch?",
       "answer": "CloudWatch monitors AWS resources and applications, collects metrics, and triggers alarms."
     },
     {
-      "question": "32. What is CloudTrail?",
+      "question": "2. Scenario: You want to trigger an alert when CPU usage crosses 80% on EC2. How?",
+      "answer": "Create a CloudWatch Alarm on the CPU metric and configure SNS notifications to alert the team."
+    },
+    {
+      "question": "3. What is CloudTrail?",
       "answer": "CloudTrail records AWS API calls and provides audit logs for governance and compliance."
     },
     {
-      "question": "33. Difference between CloudWatch and CloudTrail?",
-      "answer": "CloudWatch monitors performance metrics and logs; CloudTrail tracks API calls and user activity for auditing."
+      "question": "4. Scenario: You want to audit who accessed S3 buckets last month. How?",
+      "answer": "Use CloudTrail logs to review API calls for S3 bucket access and download history."
     },
     {
-      "question": "34. What is AWS Config?",
-      "answer": "AWS Config tracks resource configurations and changes to maintain compliance and audit history."
+      "question": "5. Scenario: How to enforce multi-factor authentication (MFA) for IAM users?",
+      "answer": "Enable MFA in IAM, attach policies requiring MFA for critical operations."
     },
     {
-      "question": "35. What is IAM?",
-      "answer": "Identity and Access Management (IAM) allows you to manage users, roles, and permissions securely."
+      "question": "6. Scenario: How do you detect unauthorized activity in your AWS account?",
+      "answer": "Enable GuardDuty for continuous threat detection and monitor CloudTrail for suspicious API calls."
     },
     {
-      "question": "36. What are IAM roles?",
-      "answer": "IAM roles provide temporary credentials to access AWS resources without sharing long-term credentials."
+      "question": "7. Scenario: How do you encrypt data at rest in AWS?",
+      "answer": "Use KMS-managed keys to encrypt EBS, S3, and RDS data."
     },
     {
-      "question": "37. Difference between IAM user and role?",
-      "answer": "IAM users are permanent identities; roles provide temporary permissions for services, users, or applications."
+      "question": "8. Scenario: How do you centralize logs from multiple AWS accounts?",
+      "answer": "Use CloudWatch Logs with cross-account subscriptions or AWS Organizations integration."
     },
     {
-      "question": "38. What is GuardDuty?",
-      "answer": "AWS GuardDuty is a threat detection service that continuously monitors for malicious activity and unauthorized behavior."
+      "question": "9. Scenario: How to respond automatically to non-compliant resources?",
+      "answer": "Use AWS Config rules with remediation actions or Lambda to auto-correct violations."
     },
     {
-      "question": "39. How do you enforce encryption in AWS?",
-      "answer": "Use KMS for key management, enable S3 encryption, EBS encryption, and enforce TLS in transit."
-    },
-    {
-      "question": "40. How to monitor logs in AWS?",
-      "answer": "Use CloudWatch Logs, CloudTrail, and optionally send them to S3 or third-party SIEM tools for analysis."
-    },
-    {
-      "question": "41. What is AWS WAF?",
-      "answer": "AWS WAF (Web Application Firewall) protects web applications from common web exploits."
-    },
-    {
-      "question": "42. What is AWS Shield?",
-      "answer": "AWS Shield is a managed DDoS protection service for web applications."
-    },
-    {
-      "question": "43. How do you audit AWS resources?",
-      "answer": "Use CloudTrail, Config, IAM Access Analyzer, and Trusted Advisor for auditing and compliance."
-    },
-    {
-      "question": "44. What is MFA and how is it used?",
-      "answer": "Multi-Factor Authentication adds an extra security layer requiring a second factor like SMS, TOTP, or hardware key."
-    },
-    {
-      "question": "45. Difference between CloudWatch Alarms and Events?",
-      "answer": "Alarms monitor metrics and trigger actions when thresholds are crossed; Events respond to AWS resource changes or schedules."
-    },
-    {
-      "question": "46. How do you enable monitoring for EC2?",
-      "answer": "Enable CloudWatch detailed monitoring, create metrics and alarms for CPU, disk, and network usage."
-    },
-    {
-      "question": "47. What is AWS Trusted Advisor?",
-      "answer": "Trusted Advisor provides best practice recommendations for cost optimization, security, fault tolerance, and performance."
-    },
-    {
-      "question": "48. How do you secure S3 buckets publicly exposed?",
-      "answer": "Use bucket policies, IAM policies, block public access, and enable logging to monitor access."
-    },
-    {
-      "question": "49. Difference between KMS and CloudHSM?",
-      "answer": "KMS is a managed key service for encryption; CloudHSM provides dedicated hardware security modules for advanced use cases."
-    },
-    {
-      "question": "50. How to implement centralized logging in AWS?",
-      "answer": "Use CloudWatch Logs, CloudTrail, and optionally aggregate into S3 or Elasticsearch for centralized analysis."
+      "question": "10. Scenario: How do you monitor application performance and downtime?",
+      "answer": "Use CloudWatch metrics, custom application logs, and set alarms for latency, error rates, or failures."
     }
   ]
 }
