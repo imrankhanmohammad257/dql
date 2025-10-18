@@ -1,40 +1,61 @@
-import React from "react"; // Make sure this is imported
+"use client";
+
+import React from "react";
 import Link from "next/link";
 import topics from "./data/topics.json";
 import { FaCogs, FaAws, FaDocker, FaLinux, FaQuestionCircle } from "react-icons/fa";
 import { SiJenkins, SiTerraform, SiAnsible, SiKubernetes, SiGnubash } from "react-icons/si";
 
 const iconMap: Record<string, React.ReactNode> = {
-  FaCogs: <FaCogs size={20} />,
-  FaAws: <FaAws size={20} />,
-  SiJenkins: <SiJenkins size={20} />,
-  SiTerraform: <SiTerraform size={20} />,
-  FaDocker: <FaDocker size={20} />,
-  SiAnsible: <SiAnsible size={20} />,
-  SiKubernetes: <SiKubernetes size={20} />,
-  FaLinux: <FaLinux size={20} />,
-  SiGnubash: <SiGnubash size={20} />,
-  FaQuestionCircle: <FaQuestionCircle size={20} />,
+  FaCogs: <FaCogs size={24} />,
+  FaAws: <FaAws size={24} />,
+  SiJenkins: <SiJenkins size={24} />,
+  SiTerraform: <SiTerraform size={24} />,
+  FaDocker: <FaDocker size={24} />,
+  SiAnsible: <SiAnsible size={24} />,
+  SiKubernetes: <SiKubernetes size={24} />,
+  FaLinux: <FaLinux size={24} />,
+  SiGnubash: <SiGnubash size={24} />,
+  FaQuestionCircle: <FaQuestionCircle size={24} />,
 };
 
 export default function Home() {
   return (
-    <div className="text-center">
-      <h1 className="text-3xl font-bold mb-4">DevOps & AWS Interview Q&A</h1>
-      <p className="mb-6">Select a topic below to explore interview questions and answers:</p>
+    <div className="relative text-center min-h-screen bg-gray-50">
+      {/* Page Header */}
+      <header className="py-10">
+        <h1 className="text-3xl md:text-4xl font-bold mb-2 text-green-600">
+          DevOps & AWS Interview Q&A
+        </h1>
+        <p className="text-gray-700 mb-6 text-lg md:text-xl">
+          Select a topic below to explore interview questions and answers
+        </p>
+      </header>
 
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-        {topics.map((topic) => (
-          <Link
-            key={topic.slug}
-            href={`/topics/${topic.slug}`}
-            className={`flex items-center justify-center gap-2 p-4 ${topic.color} text-white rounded-xl shadow`}
-          >
-            {iconMap[topic.icon]}
-            <span>{topic.name}</span>
-          </Link>
-        ))}
-      </div>
+      {/* Topics Grid */}
+      <main className="px-4 pb-20">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          {topics.map((topic) => (
+            <Link
+              key={topic.slug}
+              href={`/topics/${topic.slug}`}
+              className={`flex flex-col items-center justify-center gap-2 p-4 ${topic.color} text-white rounded-xl shadow hover:scale-105 transition-transform`}
+            >
+              {iconMap[topic.icon]}
+              <span className="font-medium text-sm md:text-base">{topic.name}</span>
+            </Link>
+          ))}
+        </div>
+      </main>
+
+      {/* Floating Feedback Button */}
+      <Link
+        href="<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdEsePAiegP8ZUhT7WJPDxHizY9uulD5Wcbm4CVAwBfqsdrAQ/viewform?embedded=true" width="640" height="1138" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>"
+        className="fixed bottom-5 right-5 bg-green-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-green-700 z-50 flex items-center gap-2"
+      >
+        <FaQuestionCircle size={20} />
+        Feedback
+      </Link>
     </div>
   );
 }
