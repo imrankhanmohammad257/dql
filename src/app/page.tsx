@@ -50,7 +50,7 @@ export default function Home() {
       </main>
 
       {/* Floating Feedback Button */}
-      <Link href="/feedback">
+      <Link href="https://docs.google.com/forms/d/e/1FAIpQLSdEsePAiegP8ZUhT7WJPDxHizY9uulD5Wcbm4CVAwBfqsdrAQ/viewform?embedded=true">
         <a className="fixed bottom-5 right-5 bg-green-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-green-700 z-50 flex items-center gap-2">
           <FaQuestionCircle size={20} />
           Feedback
