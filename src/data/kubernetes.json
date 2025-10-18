@@ -120,8 +120,6 @@
     "answer": "Check logs with 'kubectl logs', inspect log collectors like Fluentd or Promtail, and ensure log volume mounts are configured properly."
   },
 
-  // --- 10 Most Asked Real-Time Scenarios and Troubleshooting ---
-
   {
     "question": "31. Scenario: Pod stuck in ImagePullBackOff — how do you fix it?",
     "answer": "Check image name and tag correctness. If private registry, verify imagePullSecrets. Run 'kubectl describe pod' to see image pull errors."
