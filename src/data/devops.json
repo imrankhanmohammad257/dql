@@ -1,10 +1,202 @@
 [
   {
-    "question": "What is DevOps?",
-    "answer": "DevOps is a culture and practice that integrates development and operations to improve collaboration, automation, and delivery speed."
+    "question": "1. What is DevOps?",
+    "answer": "DevOps is a culture and set of practices that bring together software development and IT operations to shorten the system development life cycle and deliver high-quality software continuously."
   },
   {
-    "question": "What are CI/CD pipelines?",
-    "answer": "CI/CD pipelines automate the process of code integration, testing, and deployment, ensuring faster and reliable releases..."
+    "question": "2. What are the key benefits of DevOps?",
+    "answer": "Faster delivery, improved collaboration, reduced failures, quicker recovery, and better resource utilization."
+  },
+  {
+    "question": "3. What are the key phases of DevOps lifecycle?",
+    "answer": "Plan, Code, Build, Test, Release, Deploy, Operate, and Monitor."
+  },
+  {
+    "question": "4. What tools are commonly used in DevOps?",
+    "answer": "Git, Jenkins, Docker, Kubernetes, Terraform, Ansible, Prometheus, Grafana, AWS, and ELK Stack."
+  },
+  {
+    "question": "5. What is Continuous Integration (CI)?",
+    "answer": "CI is the practice of integrating code changes frequently into a shared repository, followed by automated builds and tests."
+  },
+  {
+    "question": "6. What is Continuous Deployment (CD)?",
+    "answer": "CD automates the release process, deploying code changes to production automatically after successful testing."
+  },
+  {
+    "question": "7. What is Infrastructure as Code (IaC)?",
+    "answer": "IaC is the process of managing infrastructure using code through tools like Terraform, CloudFormation, or Ansible."
+  },
+  {
+    "question": "8. What is the difference between Continuous Delivery and Continuous Deployment?",
+    "answer": "Continuous Delivery prepares every code change for release, while Continuous Deployment automatically deploys every change to production."
+  },
+  {
+    "question": "9. How do you ensure zero downtime deployment?",
+    "answer": "Use rolling updates, blue-green deployments, or canary releases to deploy updates gradually."
+  },
+  {
+    "question": "10. What is configuration drift?",
+    "answer": "Configuration drift occurs when infrastructure or application configurations deviate from the desired state over time."
+  },
+  {
+    "question": "11. Scenario: Your Jenkins build fails after a commit. What do you do?",
+    "answer": "Check the Jenkins console output, identify the failing stage, verify dependencies, and review recent code commits for syntax or build issues."
+  },
+  {
+    "question": "12. Scenario: Docker image size is too large. How can you reduce it?",
+    "answer": "Use smaller base images (like alpine), clean up temporary files, and combine RUN instructions to reduce image layers."
+  },
+  {
+    "question": "13. Scenario: Application running in Kubernetes is crashing repeatedly. How do you debug?",
+    "answer": "Run 'kubectl logs <pod>' and 'kubectl describe pod <pod>' to check logs, events, and resource limits. Verify container health checks."
+  },
+  {
+    "question": "14. What is the purpose of Docker Compose?",
+    "answer": "Docker Compose is used to define and manage multi-container applications using a YAML file."
+  },
+  {
+    "question": "15. What is the difference between a Docker image and a container?",
+    "answer": "An image is a static snapshot of an application and its dependencies, while a container is a running instance of that image."
+  },
+  {
+    "question": "16. How do you monitor a CI/CD pipeline?",
+    "answer": "Use Jenkins Blue Ocean, Prometheus + Grafana, or custom scripts to monitor job success/failure and duration metrics."
+  },
+  {
+    "question": "17. What are rolling updates in Kubernetes?",
+    "answer": "Rolling updates allow gradual updates of pods without downtime by replacing old pods with new ones step-by-step."
+  },
+  {
+    "question": "18. Scenario: Terraform plan shows resource deletion. What could be the cause?",
+    "answer": "Drift or manual changes in the infrastructure. Always review plans before applying and use 'terraform import' if resources were created manually."
+  },
+  {
+    "question": "19. How do you handle secrets in DevOps pipelines?",
+    "answer": "Use secret management tools like AWS Secrets Manager, HashiCorp Vault, or Jenkins credentials binding."
+  },
+  {
+    "question": "20. What is blue-green deployment?",
+    "answer": "It involves maintaining two environments — one active (blue) and one idle (green). The new version is deployed to green, tested, and then switched over."
+  },
+  {
+    "question": "21. Scenario: Your application deployment succeeded, but users report errors. What’s your first step?",
+    "answer": "Check application logs, rollback to the previous version if necessary, and analyze configuration or environment changes."
+  },
+  {
+    "question": "22. What is a Jenkins pipeline?",
+    "answer": "A Jenkins pipeline defines a series of automated steps (build, test, deploy) written in Groovy syntax to manage CI/CD workflows."
+  },
+  {
+    "question": "23. Scenario: CPU usage in a container is consistently high. What do you do?",
+    "answer": "Check application code for leaks, verify Kubernetes resource limits, and analyze metrics in Prometheus or Grafana."
+  },
+  {
+    "question": "24. What is container orchestration?",
+    "answer": "Container orchestration automates deployment, scaling, and management of containers across multiple hosts — typically using Kubernetes or Docker Swarm."
+  },
+  {
+    "question": "25. How do you handle rollback in CI/CD?",
+    "answer": "Maintain previous stable artifacts or use Git tags to redeploy the last working version automatically."
+  },
+  {
+    "question": "26. What is Ansible used for?",
+    "answer": "Ansible is used for configuration management, application deployment, and task automation using YAML playbooks."
+  },
+  {
+    "question": "27. Scenario: Jenkins job fails due to missing dependencies. How do you fix it?",
+    "answer": "Update the build node environment, use Docker agents for consistent builds, or include dependency installation steps in the pipeline."
+  },
+  {
+    "question": "28. What is the difference between Terraform and Ansible?",
+    "answer": "Terraform is declarative and used for provisioning infrastructure, while Ansible is procedural and used for configuration management."
+  },
+  {
+    "question": "29. Scenario: Deployment to production failed midway. What’s your immediate action?",
+    "answer": "Rollback using the last successful deployment artifact, investigate logs, and disable auto-deploy until the issue is resolved."
+  },
+  {
+    "question": "30. What are Prometheus and Grafana used for?",
+    "answer": "Prometheus collects time-series metrics, while Grafana visualizes them through dashboards and alerts."
+  },
+  {
+    "question": "31. Scenario: You see a sudden spike in 500 errors after a new release. What’s your approach?",
+    "answer": "Check the application logs, rollback if necessary, validate environment variables, and analyze changes introduced in the release."
+  },
+  {
+    "question": "32. What are some best practices for Dockerfile writing?",
+    "answer": "Use minimal base images, define explicit versions, avoid unnecessary layers, and use .dockerignore to reduce context size."
+  },
+  {
+    "question": "33. What is GitOps?",
+    "answer": "GitOps uses Git repositories as the single source of truth for declarative infrastructure and applications, automatically syncing changes to environments."
+  },
+  {
+    "question": "34. What is the role of a reverse proxy in DevOps architectures?",
+    "answer": "Reverse proxies like Nginx or HAProxy manage traffic routing, SSL termination, caching, and load balancing."
+  },
+  {
+    "question": "35. Scenario: Your Terraform state file is corrupted. How do you recover?",
+    "answer": "Use a remote backend (like S3 + DynamoDB), restore from a previous state version, or import resources again using 'terraform import'."
+  },
+  {
+    "question": "36. What is canary deployment?",
+    "answer": "Canary deployment releases updates to a small subset of users before full rollout, allowing safe testing in production."
+  },
+  {
+    "question": "37. Scenario: A service is failing health checks in Kubernetes. What do you check?",
+    "answer": "Review liveness and readiness probes, container logs, and verify service-to-pod connectivity."
+  },
+  {
+    "question": "38. What is version control and why is it important?",
+    "answer": "Version control (like Git) tracks changes to code, supports collaboration, and enables rollback to previous states."
+  },
+  {
+    "question": "39. What are Jenkins agents?",
+    "answer": "Agents are worker nodes that execute Jenkins jobs, allowing parallel builds and workload distribution."
+  },
+  {
+    "question": "40. Scenario: Your CI/CD pipeline runs slowly. How can you optimize it?",
+    "answer": "Enable parallel stages, use caching, run lightweight containers for builds, and archive only necessary artifacts."
+  },
+  {
+    "question": "41. What is immutable infrastructure?",
+    "answer": "Immutable infrastructure means servers or containers are replaced rather than modified when updates are applied."
+  },
+  {
+    "question": "42. What is the difference between monitoring and observability?",
+    "answer": "Monitoring tracks known metrics; observability provides deeper insight into system behavior using logs, traces, and metrics together."
+  },
+  {
+    "question": "43. Scenario: You deployed an app via Terraform but can’t SSH into the EC2 instance. What could be wrong?",
+    "answer": "Check the security group inbound rules, key pair association, and ensure correct subnet routing."
+  },
+  {
+    "question": "44. What is the role of CI/CD in DevOps?",
+    "answer": "It automates code integration, testing, and deployment to ensure faster, more reliable software delivery."
+  },
+  {
+    "question": "45. Scenario: A developer pushed broken code to the main branch. How do you mitigate it?",
+    "answer": "Implement branch protection, automated testing in PRs, and use Jenkins to validate code before merging."
+  },
+  {
+    "question": "46. What is chaos engineering?",
+    "answer": "Chaos engineering involves intentionally injecting failures into systems to test resilience and improve reliability."
+  },
+  {
+    "question": "47. Scenario: Disk space on Jenkins master is full. What do you do?",
+    "answer": "Clean old build logs, archive artifacts externally, and configure automatic workspace cleanup."
+  },
+  {
+    "question": "48. What is the difference between pull and push deployment models?",
+    "answer": "In pull, agents fetch deployment instructions (like GitOps). In push, a central system (like Jenkins) triggers deployments directly."
+  },
+  {
+    "question": "49. Scenario: Your Prometheus metrics are missing after a restart. What could be the cause?",
+    "answer": "Check the retention period, ensure persistent storage for /prometheus data, and validate configuration files."
+  },
+  {
+    "question": "50. How do you ensure security in a DevOps pipeline?",
+    "answer": "Integrate security scans (SAST/DAST), manage credentials securely, use signed images, and enforce least-privilege IAM policies."
   }
 ]
