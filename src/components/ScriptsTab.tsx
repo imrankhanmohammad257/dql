@@ -191,22 +191,7 @@ export default function ScriptsTab() {
         state: started
         enabled: yes`}
         </code>
-      </pre>
-
-      {/* Terraform Scripts */}
-      <h2 className="text-xl font-semibold text-green-700">📂 Terraform Scripts</h2>
-      <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
-        <code className="language-hcl">
-{`provider "aws" {
-  region = "ap-south-1"
-}
-
-resource "aws_instance" "web" {
-  ami           = "ami-0886832e6b5c3b9e2"
-  instance_type = "t2.micro"
-}`}
-        </code>
-      </pre>
+      </pre>      
     </div>
   );
 }
