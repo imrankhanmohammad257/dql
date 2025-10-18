@@ -6,6 +6,7 @@ import topics from "./data/topics.json";
 import { FaCogs, FaAws, FaDocker, FaLinux, FaQuestionCircle } from "react-icons/fa";
 import { SiJenkins, SiTerraform, SiAnsible, SiKubernetes, SiGnubash } from "react-icons/si";
 
+// Map topic icons
 const iconMap: Record<string, React.ReactNode> = {
   FaCogs: <FaCogs size={24} />,
   FaAws: <FaAws size={24} />,
@@ -22,7 +23,7 @@ const iconMap: Record<string, React.ReactNode> = {
 export default function Home() {
   return (
     <div className="relative text-center min-h-screen bg-gray-50">
-      {/* Page Header */}
+      {/* Header */}
       <header className="py-10">
         <h1 className="text-3xl md:text-4xl font-bold mb-2 text-green-600">
           DevOps & AWS Interview Q&A
@@ -36,25 +37,24 @@ export default function Home() {
       <main className="px-4 pb-20">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
           {topics.map((topic) => (
-            <Link
-              key={topic.slug}
-              href={`/topics/${topic.slug}`}
-              className={`flex flex-col items-center justify-center gap-2 p-4 ${topic.color} text-white rounded-xl shadow hover:scale-105 transition-transform`}
-            >
-              {iconMap[topic.icon]}
-              <span className="font-medium text-sm md:text-base">{topic.name}</span>
+            <Link key={topic.slug} href={`/topics/${topic.slug}`}>
+              <a
+                className={`flex flex-col items-center justify-center gap-2 p-4 ${topic.color} text-white rounded-xl shadow hover:scale-105 transition-transform`}
+              >
+                {iconMap[topic.icon]}
+                <span className="font-medium text-sm md:text-base">{topic.name}</span>
+              </a>
             </Link>
           ))}
         </div>
       </main>
 
       {/* Floating Feedback Button */}
-      <Link
-        href="<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdEsePAiegP8ZUhT7WJPDxHizY9uulD5Wcbm4CVAwBfqsdrAQ/viewform?embedded=true" width="640" height="1138" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>"
-        className="fixed bottom-5 right-5 bg-green-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-green-700 z-50 flex items-center gap-2"
-      >
-        <FaQuestionCircle size={20} />
-        Feedback
+      <Link href="/feedback">
+        <a className="fixed bottom-5 right-5 bg-green-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-green-700 z-50 flex items-center gap-2">
+          <FaQuestionCircle size={20} />
+          Feedback
+        </a>
       </Link>
     </div>
   );
