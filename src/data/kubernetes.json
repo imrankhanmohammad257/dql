@@ -1,10 +1,165 @@
 [
   {
-    "question": "What is Kubernetes?",
-    "answer": "Kubernetes is a container orchestration platform for automating deployment, scaling, and management of applications."
+    "question": "1. What is Kubernetes and why do we use it?",
+    "answer": "Kubernetes (K8s) is an open-source container orchestration platform that automates deployment, scaling, and management of containerized applications. It helps manage multiple containers across multiple hosts ensuring high availability, auto-scaling, and zero downtime deployments."
   },
   {
-    "question": "What is a Pod in Kubernetes?",
-    "answer": "A Pod is the smallest deployable unit in Kubernetes that can run one or more containers."
+    "question": "2. What is the difference between a Pod and a Container?",
+    "answer": "A Pod is the smallest deployable unit in Kubernetes that can contain one or more containers sharing the same network namespace and storage. Containers are individual runtime environments within Pods."
+  },
+  {
+    "question": "3. What is a ReplicaSet?",
+    "answer": "ReplicaSet ensures that a specified number of identical Pods are running at any given time. If one Pod fails, it automatically creates a new one."
+  },
+  {
+    "question": "4. What is a Deployment?",
+    "answer": "A Deployment is a higher-level abstraction that manages ReplicaSets and provides features like rolling updates, rollbacks, and versioned application deployments."
+  },
+  {
+    "question": "5. Difference between StatefulSet and Deployment?",
+    "answer": "Deployment is used for stateless applications, while StatefulSet manages stateful applications with stable identities, persistent storage, and ordered scaling."
+  },
+  {
+    "question": "6. What is a DaemonSet and where is it used?",
+    "answer": "DaemonSet ensures that one copy of a specific Pod runs on each node. It is used for deploying monitoring agents, log collectors, or security tools."
+  },
+  {
+    "question": "7. Give a real-time use case for DaemonSet.",
+    "answer": "To deploy a node monitoring agent like Node Exporter on every worker node automatically whenever a new node is added to the cluster."
+  },
+  {
+    "question": "8. What are Kubernetes Services and their types?",
+    "answer": "Services expose Pods to the network. Types include ClusterIP (internal), NodePort (external static port), LoadBalancer (cloud external access), and ExternalName (maps to external DNS)."
+  },
+  {
+    "question": "9. What is Ingress and why is it used?",
+    "answer": "Ingress manages external HTTP/HTTPS access to services inside the cluster using routing rules like path-based and host-based routing, and can handle SSL termination."
+  },
+  {
+    "question": "10. Scenario: Two applications on same port 80 — how to expose both?",
+    "answer": "Use an Ingress Controller with path-based routing such as '/app1' to service1 and '/app2' to service2 instead of NodePort."
+  },
+  {
+    "question": "11. What are Volumes in Kubernetes?",
+    "answer": "Volumes provide persistent storage to containers and ensure data is retained even after container restarts. Types include emptyDir, hostPath, EBS, and EFS."
+  },
+  {
+    "question": "12. Difference between EmptyDir, HostPath, EBS, and EFS?",
+    "answer": "EmptyDir is ephemeral; HostPath uses node storage; EBS provides persistent block storage to one node; EFS allows multi-node access and shared data."
+  },
+  {
+    "question": "13. What is a Persistent Volume (PV) and Persistent Volume Claim (PVC)?",
+    "answer": "A PV is cluster-level storage provisioned by an admin; a PVC is a request for storage by a user. PVCs automatically bind to PVs based on resource requirements."
+  },
+  {
+    "question": "14. What is a StorageClass?",
+    "answer": "StorageClass defines how storage is dynamically provisioned in Kubernetes, allowing automatic PV creation when a PVC is requested."
+  },
+  {
+    "question": "15. Scenario: Pod stuck in 'Pending' state — what could be the reasons?",
+    "answer": "Common reasons: No node with required resources, unbound PVC, taints on nodes, or affinity/selector mismatch."
+  },
+  {
+    "question": "16. Scenario: Pod keeps restarting — how to debug?",
+    "answer": "Check logs using 'kubectl logs', describe pod for events, verify probes and resource limits, and inspect for OOMKill or crash loops."
+  },
+  {
+    "question": "17. What are Liveness and Readiness Probes?",
+    "answer": "Liveness probe checks if container is healthy; Readiness probe checks if container is ready to serve traffic. Misconfigurations can cause restarts or missed traffic."
+  },
+  {
+    "question": "18. What is an Init Container?",
+    "answer": "Init containers run before main containers to perform setup tasks like checking dependencies or downloading configurations."
+  },
+  {
+    "question": "19. What are ConfigMaps and Secrets?",
+    "answer": "ConfigMaps store non-sensitive data like configuration files. Secrets store sensitive data such as credentials and tokens (base64 encoded)."
+  },
+  {
+    "question": "20. Scenario: How to store AWS credentials securely for pods?",
+    "answer": "Create a Kubernetes Secret and mount it into the Pod as environment variables or as a volume."
+  },
+  {
+    "question": "21. What is a Namespace in Kubernetes?",
+    "answer": "Namespaces logically isolate cluster resources. Common examples: dev, test, and prod environments."
+  },
+  {
+    "question": "22. Scenario: How do you restrict resource usage per namespace?",
+    "answer": "Use ResourceQuota and LimitRange objects to define CPU, memory, and object limits per namespace."
+  },
+  {
+    "question": "23. What are Resource Requests and Limits?",
+    "answer": "Requests define minimum guaranteed resources; Limits define maximum resources. Exceeding limits can cause OOMKill."
+  },
+  {
+    "question": "24. What is Horizontal Pod Autoscaler (HPA)?",
+    "answer": "HPA automatically adjusts the number of pod replicas based on metrics like CPU or memory usage."
+  },
+  {
+    "question": "25. Scenario: How to perform zero-downtime deployment?",
+    "answer": "Use Deployment with RollingUpdate strategy. Kubernetes replaces old Pods gradually while keeping the service available."
+  },
+  {
+    "question": "26. What is a CrashLoopBackOff error?",
+    "answer": "It means the Pod is repeatedly crashing and restarting. Common causes include bad configuration, failed dependencies, or probe misconfigurations."
+  },
+  {
+    "question": "27. What is the difference between 'kubectl apply', 'create', and 'replace'?",
+    "answer": "Create adds new resources, Apply creates or updates declaratively, and Replace overwrites existing resources completely."
+  },
+  {
+    "question": "28. How do you expose a service to the internet in a multi-node cluster?",
+    "answer": "Use Service type LoadBalancer or configure Ingress Controller. In cloud (EKS/GKE/AKS), a load balancer is created automatically."
+  },
+  {
+    "question": "29. Scenario: How to roll back a faulty deployment?",
+    "answer": "Use 'kubectl rollout undo deployment <deployment>' and check previous versions using 'kubectl rollout history'."
+  },
+  {
+    "question": "30. Real-time Scenario: Application logs not visible — how to debug?",
+    "answer": "Check logs with 'kubectl logs', inspect log collectors like Fluentd or Promtail, and ensure log volume mounts are configured properly."
+  },
+
+  // --- 10 Most Asked Real-Time Scenarios and Troubleshooting ---
+
+  {
+    "question": "31. Scenario: Pod stuck in ImagePullBackOff — how do you fix it?",
+    "answer": "Check image name and tag correctness. If private registry, verify imagePullSecrets. Run 'kubectl describe pod' to see image pull errors."
+  },
+  {
+    "question": "32. Scenario: Node shows 'NotReady' — what could be the issue?",
+    "answer": "Common causes: Kubelet service stopped, network plugin (CNI) failure, or disk pressure. Run 'systemctl status kubelet' and 'kubectl describe node'."
+  },
+  {
+    "question": "33. Scenario: Service not accessible externally — what to check?",
+    "answer": "Ensure Service type is NodePort/LoadBalancer, firewall rules allow the port, and correct targetPort is exposed in the Pod spec."
+  },
+  {
+    "question": "34. Scenario: PVC not bound to PV — what’s the reason?",
+    "answer": "Mismatch in accessModes, storageClass, or size. Verify using 'kubectl describe pvc'. Ensure a matching PV is available."
+  },
+  {
+    "question": "35. Scenario: DNS not resolving inside Pod — how to troubleshoot?",
+    "answer": "Check CoreDNS Pod status. Run 'kubectl get pods -n kube-system'. Verify 'resolv.conf' inside Pod and ensure ClusterIP for kube-dns is reachable."
+  },
+  {
+    "question": "36. Scenario: Application slow — what to check in Kubernetes?",
+    "answer": "Inspect CPU/memory usage, network latency, HPA settings, and check for resource throttling or node-level bottlenecks."
+  },
+  {
+    "question": "37. Scenario: Deployment rollout stuck — how to fix?",
+    "answer": "Run 'kubectl rollout status deployment'. Check Pod readiness probe failures or insufficient resources blocking new Pod creation."
+  },
+  {
+    "question": "38. Scenario: Container OOMKilled — what causes it?",
+    "answer": "Container exceeded its memory limit. Increase memory limit in manifest or optimize app memory usage. Check 'kubectl describe pod' events."
+  },
+  {
+    "question": "39. Scenario: Intermittent Pod network failures — how to resolve?",
+    "answer": "Check CNI plugin logs (Flannel/Calico). Verify IP conflicts or MTU mismatch. Restart CNI Pods if misconfigured."
+  },
+  {
+    "question": "40. Scenario: ConfigMap changes not reflected — why?",
+    "answer": "Pods don't auto-reload updated ConfigMaps. Redeploy or restart Pods using 'kubectl rollout restart deployment <name>'."
   }
 ]
