@@ -7,36 +7,204 @@
     {
       "question": "2. How do you launch an EC2 instance?",
       "answer": "You can launch EC2 instances via AWS Console, CLI, SDKs, or CloudFormation templates."
+    },
+    {
+      "question": "3. What is Auto Scaling in AWS?",
+      "answer": "Auto Scaling automatically adjusts the number of EC2 instances based on traffic or demand to maintain performance and reduce cost."
+    },
+    {
+      "question": "4. What is Lambda in AWS?",
+      "answer": "AWS Lambda is a serverless compute service that runs code in response to events without provisioning or managing servers."
+    },
+    {
+      "question": "5. Difference between EC2 and Lambda?",
+      "answer": "EC2 provides virtual servers for full control, while Lambda is serverless and event-driven with automatic scaling."
+    },
+    {
+      "question": "6. What is ECS and EKS?",
+      "answer": "ECS is AWS’s container orchestration service, while EKS is a managed Kubernetes service for running containerized applications."
+    },
+    {
+      "question": "7. How do you secure EC2 instances?",
+      "answer": "Use security groups, key pairs for SSH, IAM roles, patch updates, and limit network exposure."
+    },
+    {
+      "question": "8. What are AMIs?",
+      "answer": "Amazon Machine Images (AMIs) are templates used to launch EC2 instances, including OS, configuration, and software."
+    },
+    {
+      "question": "9. Difference between On-Demand, Reserved, and Spot Instances?",
+      "answer": "On-Demand: pay per use; Reserved: long-term discount; Spot: cheap but interruptible."
+    },
+    {
+      "question": "10. How do you monitor EC2 performance?",
+      "answer": "Use CloudWatch metrics, CloudWatch alarms, and logs to track CPU, memory, disk, and network performance."
     }
   ],
   "Networking": [
     {
-      "question": "3. What is VPC?",
-      "answer": "A VPC (Virtual Private Cloud) is a virtual network dedicated to your AWS account to launch resources in isolation."
+      "question": "11. What is VPC?",
+      "answer": "A Virtual Private Cloud (VPC) is a logically isolated network within AWS where you can launch resources securely."
     },
     {
-      "question": "4. What is Route 53?",
-      "answer": "Route 53 is AWS's scalable DNS and domain registration service."
+      "question": "12. What is a subnet?",
+      "answer": "A subnet is a segment of a VPC’s IP address range where you can place resources."
+    },
+    {
+      "question": "13. What is Internet Gateway?",
+      "answer": "An Internet Gateway allows communication between a VPC and the Internet."
+    },
+    {
+      "question": "14. What are security groups?",
+      "answer": "Security groups act as virtual firewalls for EC2 instances, controlling inbound and outbound traffic."
+    },
+    {
+      "question": "15. What is a NAT Gateway?",
+      "answer": "A NAT Gateway allows instances in a private subnet to access the Internet without exposing them publicly."
+    },
+    {
+      "question": "16. What is Route 53?",
+      "answer": "Route 53 is AWS’s scalable DNS and domain registration service."
+    },
+    {
+      "question": "17. Difference between public and private subnets?",
+      "answer": "Public subnets have direct Internet access; private subnets do not and require NAT for outbound Internet traffic."
+    },
+    {
+      "question": "18. What is CloudFront?",
+      "answer": "CloudFront is AWS’s CDN service to deliver content globally with low latency."
+    },
+    {
+      "question": "19. Difference between VPC peering and VPN?",
+      "answer": "VPC peering connects VPCs privately within AWS; VPN connects on-premise networks securely to AWS VPCs."
+    },
+    {
+      "question": "20. What is Elastic Load Balancer (ELB)?",
+      "answer": "ELB automatically distributes incoming traffic across multiple EC2 instances for high availability."
     }
   ],
   "Storage": [
     {
-      "question": "5. What is S3?",
+      "question": "21. What is S3?",
       "answer": "Amazon S3 is object storage designed to store and retrieve any amount of data from anywhere."
     },
     {
-      "question": "6. Difference between EBS and S3?",
-      "answer": "EBS is block storage for EC2 instances; S3 is object storage for static files, backups, and media."
+      "question": "22. Difference between S3, EBS, and EFS?",
+      "answer": "S3: object storage; EBS: block storage for EC2; EFS: file storage accessible by multiple EC2 instances."
+    },
+    {
+      "question": "23. What are S3 storage classes?",
+      "answer": "S3 offers Standard, Standard-IA, One Zone-IA, Glacier, and Glacier Deep Archive for cost and access optimization."
+    },
+    {
+      "question": "24. How do you secure S3 buckets?",
+      "answer": "Use bucket policies, IAM policies, ACLs, encryption at rest and in transit, and enable versioning."
+    },
+    {
+      "question": "25. What is S3 versioning?",
+      "answer": "Versioning allows multiple versions of an object in a bucket, helping with recovery from accidental deletion or overwrite."
+    },
+    {
+      "question": "26. What is Glacier?",
+      "answer": "Amazon Glacier is low-cost archival storage for infrequently accessed data with retrieval time from minutes to hours."
+    },
+    {
+      "question": "27. Difference between EBS and instance store?",
+      "answer": "EBS is persistent storage that survives instance termination; instance store is ephemeral and tied to the lifecycle of an instance."
+    },
+    {
+      "question": "28. What is AWS Backup?",
+      "answer": "AWS Backup automates and centralizes backups for AWS services like EBS, RDS, DynamoDB, and EFS."
+    },
+    {
+      "question": "29. What is lifecycle policy in S3?",
+      "answer": "Lifecycle policies automatically transition objects between storage classes or delete them after a specified period."
+    },
+    {
+      "question": "30. How do you share S3 objects publicly?",
+      "answer": "By setting bucket policies, object ACLs, or using pre-signed URLs with expiration."
     }
   ],
   "Monitoring & Security": [
     {
-      "question": "7. What is CloudTrail?",
+      "question": "31. What is CloudWatch?",
+      "answer": "CloudWatch monitors AWS resources and applications, collects metrics, and triggers alarms."
+    },
+    {
+      "question": "32. What is CloudTrail?",
       "answer": "CloudTrail records AWS API calls and provides audit logs for governance and compliance."
     },
     {
-      "question": "8. What is CloudWatch?",
-      "answer": "CloudWatch monitors AWS resources and applications, collects metrics, and triggers alarms."
+      "question": "33. Difference between CloudWatch and CloudTrail?",
+      "answer": "CloudWatch monitors performance metrics and logs; CloudTrail tracks API calls and user activity for auditing."
+    },
+    {
+      "question": "34. What is AWS Config?",
+      "answer": "AWS Config tracks resource configurations and changes to maintain compliance and audit history."
+    },
+    {
+      "question": "35. What is IAM?",
+      "answer": "Identity and Access Management (IAM) allows you to manage users, roles, and permissions securely."
+    },
+    {
+      "question": "36. What are IAM roles?",
+      "answer": "IAM roles provide temporary credentials to access AWS resources without sharing long-term credentials."
+    },
+    {
+      "question": "37. Difference between IAM user and role?",
+      "answer": "IAM users are permanent identities; roles provide temporary permissions for services, users, or applications."
+    },
+    {
+      "question": "38. What is GuardDuty?",
+      "answer": "AWS GuardDuty is a threat detection service that continuously monitors for malicious activity and unauthorized behavior."
+    },
+    {
+      "question": "39. How do you enforce encryption in AWS?",
+      "answer": "Use KMS for key management, enable S3 encryption, EBS encryption, and enforce TLS in transit."
+    },
+    {
+      "question": "40. How to monitor logs in AWS?",
+      "answer": "Use CloudWatch Logs, CloudTrail, and optionally send them to S3 or third-party SIEM tools for analysis."
+    },
+    {
+      "question": "41. What is AWS WAF?",
+      "answer": "AWS WAF (Web Application Firewall) protects web applications from common web exploits."
+    },
+    {
+      "question": "42. What is AWS Shield?",
+      "answer": "AWS Shield is a managed DDoS protection service for web applications."
+    },
+    {
+      "question": "43. How do you audit AWS resources?",
+      "answer": "Use CloudTrail, Config, IAM Access Analyzer, and Trusted Advisor for auditing and compliance."
+    },
+    {
+      "question": "44. What is MFA and how is it used?",
+      "answer": "Multi-Factor Authentication adds an extra security layer requiring a second factor like SMS, TOTP, or hardware key."
+    },
+    {
+      "question": "45. Difference between CloudWatch Alarms and Events?",
+      "answer": "Alarms monitor metrics and trigger actions when thresholds are crossed; Events respond to AWS resource changes or schedules."
+    },
+    {
+      "question": "46. How do you enable monitoring for EC2?",
+      "answer": "Enable CloudWatch detailed monitoring, create metrics and alarms for CPU, disk, and network usage."
+    },
+    {
+      "question": "47. What is AWS Trusted Advisor?",
+      "answer": "Trusted Advisor provides best practice recommendations for cost optimization, security, fault tolerance, and performance."
+    },
+    {
+      "question": "48. How do you secure S3 buckets publicly exposed?",
+      "answer": "Use bucket policies, IAM policies, block public access, and enable logging to monitor access."
+    },
+    {
+      "question": "49. Difference between KMS and CloudHSM?",
+      "answer": "KMS is a managed key service for encryption; CloudHSM provides dedicated hardware security modules for advanced use cases."
+    },
+    {
+      "question": "50. How to implement centralized logging in AWS?",
+      "answer": "Use CloudWatch Logs, CloudTrail, and optionally aggregate into S3 or Elasticsearch for centralized analysis."
     }
   ]
 }
