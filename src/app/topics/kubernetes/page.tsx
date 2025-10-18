@@ -4,7 +4,7 @@
 import { useState } from "react";
 import QAList from "@/components/QAList";
 import k8sData from "@/data/kubernetes.json";
-import ScriptsTab from "@/components/ScriptsTab";
+import K8sScripts from "@/components/K8sScripts";
 
 export default function KubernetesPage() {
   const [tab, setTab] = useState<"qa" | "scripts">("qa");
