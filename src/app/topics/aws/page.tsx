@@ -24,11 +24,16 @@ const awsTypedData = awsData as AWSData;
 
 export default function AWSPage() {
   // Categories typed as keys of AWSData
-  const categories: (keyof AWSData)[] = ["Compute", "Networking", "Storage", "Monitoring & Security"];
+  const categories: (keyof AWSData)[] = [
+    "Compute",
+    "Networking",
+    "Storage",
+    "Monitoring & Security",
+  ];
   const [activeTab, setActiveTab] = useState<keyof AWSData>(categories[0]);
 
   // Icons mapping
-  const icons: Record<keyof AWSData, JSX.Element> = {
+  const icons: Record<keyof AWSData, React.ReactNode> = {
     Compute: <FaServer className="inline mr-2" />,
     Networking: <FaNetworkWired className="inline mr-2" />,
     Storage: <FaDatabase className="inline mr-2" />,
