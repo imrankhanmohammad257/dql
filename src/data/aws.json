@@ -1,14 +1,42 @@
-[
-  {
-    "question": "What is AWS?",
-    "answer": "AWS (Amazon Web Services) is a cloud computing platform providing IaaS, PaaS, and SaaS solutions."
-  },
-  {
-    "question": "What is an EC2 instance?",
-    "answer": "Amazon EC2 provides resizable compute capacity in the cloud, allowing you to run virtual servers."
-  },
-  {
-    "question": "What is S3?",
-    "answer": "Amazon S3 (Simple Storage Service) is an object storage service used for storing and retrieving data at scale."
-  }
-]
+{
+  "Compute": [
+    {
+      "question": "1. What is EC2?",
+      "answer": "EC2 (Elastic Compute Cloud) is a web service that provides resizable compute capacity in the cloud."
+    },
+    {
+      "question": "2. How do you launch an EC2 instance?",
+      "answer": "You can launch EC2 instances via AWS Console, CLI, SDKs, or CloudFormation templates."
+    }
+  ],
+  "Networking": [
+    {
+      "question": "3. What is VPC?",
+      "answer": "A VPC (Virtual Private Cloud) is a virtual network dedicated to your AWS account to launch resources in isolation."
+    },
+    {
+      "question": "4. What is Route 53?",
+      "answer": "Route 53 is AWS's scalable DNS and domain registration service."
+    }
+  ],
+  "Storage": [
+    {
+      "question": "5. What is S3?",
+      "answer": "Amazon S3 is object storage designed to store and retrieve any amount of data from anywhere."
+    },
+    {
+      "question": "6. Difference between EBS and S3?",
+      "answer": "EBS is block storage for EC2 instances; S3 is object storage for static files, backups, and media."
+    }
+  ],
+  "Monitoring & Security": [
+    {
+      "question": "7. What is CloudTrail?",
+      "answer": "CloudTrail records AWS API calls and provides audit logs for governance and compliance."
+    },
+    {
+      "question": "8. What is CloudWatch?",
+      "answer": "CloudWatch monitors AWS resources and applications, collects metrics, and triggers alarms."
+    }
+  ]
+}
