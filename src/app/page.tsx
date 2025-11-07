@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import topics from "./data/topics.json";
-import { FaCogs, FaAws, FaDocker, FaLinux, FaQuestionCircle, FaBell } from "react-icons/fa";
+import { FaCogs, FaAws, FaDocker, FaLinux, FaQuestionCircle } from "react-icons/fa";
 import { SiJenkins, SiTerraform, SiAnsible, SiKubernetes, SiGnubash } from "react-icons/si";
 
 // Map topic icons
@@ -34,7 +34,7 @@ export default function Home() {
       </header>
 
       {/* Topics Grid */}
-      <main className="px-4 pb-20">
+      <main className="px-4 pb-10">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
           {topics.map((topic) => (
             <Link key={topic.slug} href={`/topics/${topic.slug}`}>
@@ -49,37 +49,22 @@ export default function Home() {
         </div>
       </main>
 
-      {/* 🔔 Stay Updated Section */}
-      <section className="bg-gradient-to-r from-green-500 to-green-700 text-white py-10 px-4 mt-10">
-        <div className="max-w-xl mx-auto text-center">
-          <FaBell size={36} className="mx-auto mb-3 animate-bounce" />
-          <h2 className="text-2xl font-bold mb-2">Stay Updated with New Features 🚀</h2>
-          <p className="text-white/90 mb-5">
-            Get notified when we add new DevOps interview questions, topics, or features.
-          </p>
-
-          <form
-            action="https://docs.google.com/forms/d/e/1FAIpQLSdEsePAiegP8ZUhT7WJPDxHizY9uulD5Wcbm4CVAwBfqsdrAQ/viewform"
-            target="_blank"
-            className="flex flex-col sm:flex-row gap-2 justify-center"
-          >
-            <input
-              type="email"
-              placeholder="Enter your email"
-              required
-              className="px-4 py-3 rounded-md text-gray-900 w-full sm:w-auto flex-1 focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="bg-white text-green-700 font-semibold px-5 py-3 rounded-md hover:bg-gray-200 transition"
-            >
-              Notify Me
-            </button>
-          </form>
-        </div>
+      {/* 🆕 Updates Box */}
+      <section className="max-w-2xl mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 mb-16 border border-gray-200 dark:border-gray-700">
+        <h2 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-4 flex items-center justify-center gap-2">
+          🆕 Latest Updates
+        </h2>
+        <ul className="text-left text-gray-700 dark:text-gray-300 space-y-2">
+          <li>✅ <strong>Ansible</strong> scripts updated with new automation examples</li>
+          <li>🌙 <strong>Dark Mode</strong> feature added for better viewing experience</li>
+          <li>🚀 Performance optimization for faster page loads</li>
+        </ul>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-4 text-right">
+          Last updated: <strong>November 2025</strong>
+        </p>
       </section>
 
-      {/* Floating Feedback Button */}
+      {/* Floating Feedback Button (unchanged) */}
       <Link href="https://docs.google.com/forms/d/e/1FAIpQLSdEsePAiegP8ZUhT7WJPDxHizY9uulD5Wcbm4CVAwBfqsdrAQ/viewform?embedded=true">
         <div className="fixed bottom-5 right-5 bg-green-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-green-700 z-50 flex items-center gap-2">
           <FaQuestionCircle size={20} />
