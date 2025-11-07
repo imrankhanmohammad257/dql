@@ -54,8 +54,7 @@ export default function Home() {
         <h2 className="text-xl font-semibold text-green-600 dark:text-green-400 mb-4 flex items-center justify-center gap-2">
           🆕 Latest Updates
         </h2>
-        <ul className="text-left text-gray-700 dark:text-gray-300 space-y-2">
-          <li>✅ <strong>Ansible</strong> scripts updated with new automation examples</li>
+        <ul className="text-left text-gray-700 dark:text-gray-300 space-y-2">         
           <li>🌙 <strong>Dark Mode</strong> feature added for better viewing experience</li>
           <li>🚀 Performance optimization for faster page loads</li>
         </ul>
